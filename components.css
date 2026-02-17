@@ -50,16 +50,34 @@
     box-shadow: 0 0 20px #00b4d8, 0 0 40px rgba(0, 180, 216, 0.3);
 }
 
-/* 5. Prism Glass */
+/* 5. Prism Glass (REDESIGNED) */
 .btn-prism-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: white;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
     font-weight: 500;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-prism-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-prism-glass:hover::before {
+    left: 100%;
 }
 
 /* 6. Neon Plasma Core */
@@ -84,26 +102,39 @@
     box-shadow: 0 0 30px rgba(0, 206, 209, 0.3);
 }
 
-/* 8. Multi-Stop Gradient */
+/* 8. Multi-Stop Gradient (REDESIGNED) */
 .btn-multi-stop {
     background: linear-gradient(145deg, #4158D0, #C850C0, #FFCC70, #4158D0);
+    background-size: 300% 300%;
     color: white;
     font-weight: 500;
     padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
     border: none;
+    animation: gradientShift 8s ease infinite;
 }
 
-/* 9. Frosted Dark */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 9. Frosted Dark (REDESIGNED) */
 .btn-frosted-dark {
-    background: #0f172a;
-    color: white;
+    background: #1a2639;
+    color: #e2e8f0;
     font-weight: 500;
     padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #2d3748;
+    box-shadow: 0 8px 0 #0f172a, 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-frosted-dark:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 #0f172a, 0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* 10. Glass Strip */
@@ -138,15 +169,31 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 2px 5px rgba(255, 255, 255, 0.5);
 }
 
-/* 13. Holographic Spectrum */
+/* 13. Holographic Spectrum (REDESIGNED) */
 .btn-holo-spectrum {
-    background: linear-gradient(135deg, #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00);
+    background: conic-gradient(from 0deg, #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
-    border: none;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-holo-spectrum::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: inherit;
+    border-radius: 0.6rem;
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.7;
 }
 
 /* 14. Glossy Liquid */
@@ -214,17 +261,19 @@
     box-shadow: 0 -10px 20px rgba(100, 200, 255, 0.3);
 }
 
-/* 20. Crystal Panel */
+/* 20. Crystal Panel (REDESIGNED) */
 .btn-crystal-panel {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(240, 248, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     color: white;
     font-weight: 500;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2), inset 0 -2px 5px rgba(255,255,255,0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* ===== SECTION 2: HYPER-REAL SURFACE (21-40) ===== */
@@ -351,15 +400,29 @@
     border: none;
 }
 
-/* 32. Carbon Fiber Gloss */
+/* 32. Carbon Fiber Gloss (REDESIGNED) */
 .btn-carbon-gloss {
-    background: #1a1a1a;
-    color: #e0e0e0;
+    background: linear-gradient(145deg, #1e1e1e, #2d2d2d);
+    color: #ffffff;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    border: none;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.1);
+    border: 1px solid #3d3d3d;
+    box-shadow: 0 10px 15px -5px rgba(0,0,0,0.5), inset 0 1px 3px rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-carbon-gloss::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
+    opacity: 0.5;
+    transform: rotate(30deg);
 }
 
 /* 33. Embossed Leather */
@@ -420,15 +483,22 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 38. Ultra-Matte Polymer */
+/* 38. Ultra-Matte Polymer (REDESIGNED) */
 .btn-ultra-matte {
-    background: #1a1a1a;
-    color: #f0f0f0;
+    background: #2c3e50;
+    color: #ecf0f1;
     font-weight: 500;
     padding: 0.75rem 1.5rem;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     border: none;
-    box-shadow: none;
+    box-shadow: 0 2px 0 #1a252f, 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    position: relative;
+}
+
+.btn-ultra-matte:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 #1a252f, 0 6px 10px rgba(0,0,0,0.1);
 }
 
 /* 39. Engraved Metal */
@@ -477,14 +547,28 @@
     box-shadow: 4px 4px 0 #1b5e20, 8px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 43. Multi-Panel Segmented */
+/* 43. Multi-Panel Segmented (REDESIGNED) */
 .btn-segmented {
-    background: linear-gradient(90deg, #1976d2 33%, #bbdefb 33%, #bbdefb 66%, #1976d2 66%);
+    background: #455a64;
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    border: 2px solid #1976d2;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-segmented::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.2) 70%, transparent 70%);
+    z-index: -1;
 }
 
 /* 44. Framed Inner Capsule */
@@ -674,15 +758,32 @@
 
 /* ===== SECTION 4: EXPERIMENTAL COLOR (61-80) ===== */
 
-/* 61. Duotone Light Split */
+/* 61. Duotone Light Split (REDESIGNED) */
 .btn-duotone-split {
-    background: linear-gradient(45deg, #ff4d4d 50%, #4d79ff 50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     border: none;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-duotone-split::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-duotone-split:hover::after {
+    opacity: 1;
 }
 
 /* 62. Radial Burst */
@@ -726,14 +827,21 @@
     border: none;
 }
 
-/* 66. Diagonal Color Slice */
+/* 66. Diagonal Color Slice (REDESIGNED) */
 .btn-diagonal-slice {
-    background: linear-gradient(135deg, #f06292 50%, #ba68c8 50%);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     border: none;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-diagonal-slice:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
 }
 
 /* 67. Corner Accent Pop */
@@ -890,14 +998,15 @@
 
 /* ===== SECTION 5: GEOMETRY & SHAPE (81-100) ===== */
 
-/* 81. Asymmetric Capsule */
+/* 81. Asymmetric Capsule (REDESIGNED) */
 .btn-asymmetric-capsule {
-    background: #ff7043;
+    background: linear-gradient(145deg, #ff8a5c, #ff6b4a);
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border-radius: 3rem 1rem 3rem 1rem;
     border: none;
+    box-shadow: 0 10px 20px rgba(255, 107, 74, 0.3);
 }
 
 /* 82. Soft-Edge Squircle */
@@ -910,26 +1019,40 @@
     border-radius: 40% 40% 40% 40% / 40% 40% 40% 40%;
 }
 
-/* 83. Cut-Corner Frame */
+/* 83. Cut-Corner Frame (REDESIGNED) */
 .btn-cut-corner-frame {
-    background: #7e57c2;
+    background: #6a4e9b;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    padding: 0.75rem 2rem;
+    border: 2px solid #8e6bc4;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+    position: relative;
+    transition: all 0.2s;
 }
 
-/* 84. Skewed Glass Panel */
+.btn-cut-corner-frame::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 30px;
+    height: 30px;
+    border-top: 4px solid #ffd966;
+    border-left: 4px solid #ffd966;
+}
+
+/* 84. Skewed Glass Panel (REDESIGNED) */
 .btn-skewed-glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: white;
+    background: linear-gradient(145deg, rgba(72, 202, 228, 0.3), rgba(73, 88, 203, 0.3));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transform: skewX(-5deg);
+    padding: 0.75rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* 85. Angled Capsule with Straight Base */
@@ -942,14 +1065,21 @@
     border-radius: 3rem 3rem 1rem 1rem;
 }
 
-/* 86. Half-Rounded Split */
+/* 86. Half-Rounded Split (REDESIGNED) */
 .btn-half-rounded {
-    background: #ef5350;
+    background: #e84855;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem 0.5rem 0.5rem 2rem;
     border: none;
-    border-radius: 3rem 0.5rem 0.5rem 3rem;
+    box-shadow: 5px 5px 0 #9e2a2b;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-half-rounded:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 #9e2a2b;
 }
 
 /* 87. Pill with Inner Sharp Core - UNIQUE: Complex border radius */
@@ -963,34 +1093,55 @@
     box-shadow: inset 0 0 0 4px #8e24aa;
 }
 
-/* 88. Rounded Outer Sharp Inner */
+/* 88. Rounded Outer Sharp Inner (REDESIGNED) */
 .btn-round-sharp {
-    background: #ffa726;
+    background: #f9a826;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border-radius: 3rem 0.5rem 0.5rem 3rem;
-    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: 4px solid #c57f1a;
+    box-shadow: 0 8px 0 #8f5e14, 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* 89. Side Notch Accent */
+/* 89. Side Notch Accent (REDESIGNED) */
 .btn-notch {
-    background: #66bb6a;
+    background: #48c9b0;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border: none;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 80%);
+    border-radius: 2rem 0.5rem 0.5rem 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 90. Slanted Frame Minimal */
+.btn-notch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: #f1c40f;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #f1c40f;
+}
+
+/* 90. Slanted Frame Minimal (REDESIGNED) */
 .btn-slanted-frame {
-    background: #42a5f5;
+    background: #3498db;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: 3px solid white;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+    padding: 0.75rem 2rem;
+    border: 2px solid #2980b9;
+    transform: skewX(-5deg);
+    transition: transform 0.2s;
+}
+
+.btn-slanted-frame:hover {
+    transform: skewX(0);
 }
 
 /* 91. Offset Corner Highlight */
@@ -1003,64 +1154,117 @@
     box-shadow: -5px -5px 0 #ffd54f inset;
 }
 
-/* 92. Capsule with Extended Tail */
+/* 92. Capsule with Extended Tail (REDESIGNED) */
 .btn-tail {
-    background: #ec407a;
+    background: #e67e22;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem 0.75rem 1.5rem;
+    border-radius: 3rem 0.5rem 0.5rem 3rem;
+    border: none;
+    position: relative;
+}
+
+.btn-tail::after {
+    content: '→';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* 93. Rectangular with Deep Curve (REDESIGNED) */
+.btn-deep-curve {
+    background: #1abc9c;
     color: white;
     font-weight: 600;
     padding: 0.75rem 2rem;
     border-radius: 3rem 0.5rem 0.5rem 3rem;
     border: none;
+    box-shadow: 0 8px 0 #16a085;
+    transition: transform 0.1s, box-shadow 0.1s;
 }
 
-/* 93. Rectangular with Deep Curve */
-.btn-deep-curve {
-    background: #29b6f6;
-    color: white;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 50% 0.5rem 0.5rem 50%;
+.btn-deep-curve:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 #16a085;
 }
 
-/* 94. Semi-Circular Capsule */
+/* 94. Semi-Circular Capsule (REDESIGNED) */
 .btn-semi-circle {
-    background: #ff8a65;
+    background: #f39c12;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem 0.5rem 0.5rem 2rem;
     border: none;
-    border-radius: 3rem 0 0 3rem;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 95. Hexagonal Soft */
+.btn-semi-circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.btn-semi-circle:hover::before {
+    transform: translateX(100%);
+}
+
+/* 95. Hexagonal Soft (REDESIGNED) */
 .btn-hex {
-    background: #ba68c8;
+    background: #9b59b6;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border: none;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    transition: transform 0.2s;
 }
 
-/* 96. Minimal Trapezoid */
+.btn-hex:hover {
+    transform: scale(1.05);
+}
+
+/* 96. Minimal Trapezoid (REDESIGNED) */
 .btn-trapezoid {
-    background: #4fc3f7;
+    background: #34495e;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border: none;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    position: relative;
+    transition: all 0.2s;
 }
 
-/* 97. Soft Diamond */
+.btn-trapezoid:hover {
+    background: #2c3e50;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+/* 97. Soft Diamond (REDESIGNED) */
 .btn-diamond {
-    background: #ffb74d;
+    background: #e74c3c;
     color: white;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border: none;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: transform 0.3s;
+}
+
+.btn-diamond:hover {
+    transform: rotate(5deg) scale(1.05);
 }
 
 /* 98. Organic Blob Capsule */
@@ -1145,17 +1349,23 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-/* 105. Bold Brutalist Slab */
+/* 105. Bold Brutalist Slab (REDESIGNED) */
 .btn-brutalist-slab {
-    background: #d32f2f;
+    background: #2c3e50;
     color: white;
     font-weight: 800;
     padding: 1rem 2rem;
     border-radius: 0;
-    border: 4px solid #0a0a0a;
-    box-shadow: 12px 12px 0 #0a0a0a;
+    border: 4px solid #e67e22;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    transition: all 0.2s;
+}
+
+.btn-brutalist-slab:hover {
+    background: #e67e22;
+    border-color: #2c3e50;
 }
 
 /* 106. High-Fashion Editorial */
