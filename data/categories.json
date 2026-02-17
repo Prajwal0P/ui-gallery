@@ -1,0 +1,73 @@
+[
+    {
+      "id": "buttons-design",
+      "name": "Buttons (Design-First)",
+      "description": "Visually distinct button designs focused on aesthetics, depth, lighting, and surface treatment",
+      "count": 120,
+      "icon": "fas fa-square"
+    },
+    {
+      "id": "hover-interactions",
+      "name": "Hover Interactions",
+      "description": "Hover effects that can be applied to any UI element — buttons, cards, images, links, list items",
+      "count": 85,
+      "icon": "fas fa-mouse-pointer"
+    },
+    {
+      "id": "active-press",
+      "name": "Active / Press Interactions",
+      "description": "Visual feedback patterns that occur when an element is pressed, clicked, or tapped",
+      "count": 65,
+      "icon": "fas fa-hand-pointer"
+    },
+    {
+      "id": "loading-states",
+      "name": "Loading States",
+      "description": "Patterns that visually communicate waiting, processing, or background work",
+      "count": 55,
+      "icon": "fas fa-spinner"
+    },
+    {
+      "id": "success-error",
+      "name": "Success & Error Feedback",
+      "description": "Patterns that visually communicate outcomes — whether an action succeeded or failed",
+      "count": 45,
+      "icon": "fas fa-check-circle"
+    },
+    {
+      "id": "cards-design",
+      "name": "Cards (Design-First)",
+      "description": "Gallery of card designs used to group content, actions, or data",
+      "count": 90,
+      "icon": "fas fa-id-card"
+    },
+    {
+      "id": "forms-inputs",
+      "name": "Forms & Inputs",
+      "description": "Patterns focused on user input clarity, validation, and feedback",
+      "count": 75,
+      "icon": "fas fa-keyboard"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation Interactions",
+      "description": "Patterns that guide users through an interface and help them understand location",
+      "count": 60,
+      "icon": "fas fa-sitemap"
+    },
+    {
+      "id": "modals-overlays",
+      "name": "Modals, Drawers & Overlays",
+      "description": "Patterns for layered UI elements that temporarily sit above the main interface",
+      "count": 50,
+      "icon": "fas fa-layer-group"
+    },
+    {
+      "id": "glass",
+      "name": "Glass & Blur Effects",
+      "description": "Glassmorphism, frosted UI, blur-based interaction patterns",
+      "count": 20,
+      "icon": "fas fa-layer-group"
+    }
+    
+  ]

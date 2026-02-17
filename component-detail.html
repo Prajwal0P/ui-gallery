@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Details | Interface Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        :root {
+            --black: #000000;
+            --dark: #0A0A0A;
+            --darker: #121212;
+            --gray: #1A1A1A;
+            --light-gray: #2A2A2A;
+            --white: #FFFFFF;
+            --off-white: #F0F0F0;
+            --accent: #FF375F;
+            --accent-glow: rgba(255, 55, 95, 0.4);
+            --secondary: #00D4FF;
+            --secondary-glow: rgba(0, 212, 255, 0.3);
+            --tertiary: #9D4EDD;
+            --grid-color: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--black);
+            color: var(--off-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Background Effects */
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-30px, -30px) rotate(0.1deg); }
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent), var(--tertiary));
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: var(--white);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, var(--white), #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--off-white);
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 120px 0 40px;
+        }
+
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .breadcrumb-link {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-link:hover {
+            color: var(--accent);
+        }
+
+        .breadcrumb-separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .breadcrumb-current {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Component Header */
+        .component-header {
+            margin-bottom: 60px;
+        }
+
+        .component-category {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(255, 55, 95, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .component-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--white), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .component-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .component-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .component-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .component-tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .component-id {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: monospace;
+        }
+
+        /* Demo Area */
+        .demo-area {
+            margin-bottom: 80px;
+        }
+
+        .demo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .demo-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .demo-action-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--off-white);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .demo-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+
+        .demo-action-btn.copy {
+            background: rgba(255, 55, 95, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .demo-action-btn.copy:hover {
+            background: rgba(255, 55, 95, 0.2);
+        }
+
+        .demo-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 60px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-placeholder {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .demo-placeholder i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        /* Code Section */
+        .code-section {
+            margin-bottom: 80px;
+        }
+
+        .code-tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .code-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .code-tab:hover {
+            color: var(--white);
+        }
+
+        .code-tab.active {
+            color: var(--accent);
+        }
+
+        .code-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .code-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .code-header {
+            padding: 16px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-language {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .code-copy-btn {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--off-white);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .code-copy-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .code-content {
+            padding: 24px;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .code-content code {
+            font-family: inherit;
+        }
+
+        /* Properties Section */
+        .properties-section {
+            margin-bottom: 80px;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .property-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .property-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .property-type {
+            font-size: 12px;
+            padding: 4px 8px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 4px;
+            color: var(--secondary);
+        }
+
+        .property-value {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: monospace;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            margin-top: 8px;
+            overflow-x: auto;
+        }
+
+        /* Related Components */
+        .related-section {
+            margin-bottom: 80px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .related-category {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .related-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .related-description {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        .footer-meta {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--success);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.error {
+            background: var(--error);
+        }
+
+        .toast.warning {
+            background: var(--warning);
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error State */
+        .error-state {
+            text-align: center;
+            padding: 80px 40px;
+        }
+
+        .error-state i {
+            font-size: 64px;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .error-state h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+
+        .error-state p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-state .back-btn {
+            padding: 12px 24px;
+            background: rgba(255, 55, 95, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .error-state .back-btn:hover {
+            background: rgba(255, 55, 95, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .component-title {
+                font-size: 2.8rem;
+            }
+            
+            .demo-container {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .breadcrumb {
+                padding: 100px 0 30px;
+            }
+            
+            .component-title {
+                font-size: 2.2rem;
+            }
+            
+            .component-description {
+                font-size: 1.1rem;
+            }
+            
+            .demo-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .demo-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .demo-container {
+                padding: 30px;
+                min-height: 300px;
+            }
+            
+            .code-tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .component-title {
+                font-size: 1.8rem;
+            }
+            
+            .demo-actions {
+                flex-direction: column;
+            }
+            
+            .demo-action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .toast {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body></body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">II</div>
+                    <div class="logo-text">Interface Index</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#categories" class="nav-link">Categories</a></li>
+                    <li><a href="index.html#previews" class="nav-link">Previews</a></li>
+                    <li><a href="index.html" class="nav-link">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <div class="breadcrumb-content">
+                    <a href="index.html" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#" class="breadcrumb-link" id="category-link">Category</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current" id="component-name">Component</span>
+                </div>
+            </div>
+
+            <!-- Component Header -->
+            <div class="component-header">
+                <div class="component-category" id="component-category">Loading...</div>
+                <h1 class="component-title" id="component-title">Loading...</h1>
+                <p class="component-description" id="component-description">Loading component description...</p>
+                <div class="component-meta">
+                    <div class="component-tags" id="component-tags">
+                        <!-- Tags will be loaded here -->
+                    </div>
+                    <div class="component-id" id="component-id">ID: loading...</div>
+                </div>
+            </div>
+
+            <!-- Demo Area -->
+            <div class="demo-area">
+                <div class="demo-header">
+                    <h2 class="demo-title">Live Demo</h2>
+                    <div class="demo-actions">
+                        <button class="demo-action-btn" id="refresh-demo">
+                            <i class="fas fa-redo"></i>
+                            Refresh
+                        </button>
+                        <button class="demo-action-btn copy" id="copy-demo">
+                            <i class="far fa-copy"></i>
+                            Copy HTML
+                        </button>
+                        <button class="demo-action-btn" id="fullscreen-demo">
+                            <i class="fas fa-expand"></i>
+                            Fullscreen
+                        </button>
+                    </div>
+                </div>
+                <div class="demo-container" id="demo-container">
+                    <div class="demo-placeholder">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading component demo...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Section -->
+            <div class="code-section">
+                <div class="code-tabs">
+                    <button class="code-tab active" data-tab="html">HTML</button>
+                    <button class="code-tab" data-tab="css">CSS</button>
+                    <button class="code-tab" data-tab="js">JavaScript</button>
+                </div>
+                <div class="code-container">
+                    <div class="code-header">
+                        <span class="code-language" id="code-language">HTML</span>
+                        <button class="code-copy-btn" id="copy-code">
+                            <i class="far fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="code-content">
+                        <pre id="html-code"><code>// HTML code will be loaded here</code></pre>
+                        <pre id="css-code" style="display: none;"><code>// CSS code will be loaded here</code></pre>
+                        <pre id="js-code" style="display: none;"><code>// JavaScript code will be loaded here</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Properties Section -->
+            <div class="properties-section">
+                <h2 class="demo-title">CSS Properties</h2>
+                <div class="properties-grid" id="properties-grid">
+                    <!-- Properties will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Related Components -->
+            <div class="related-section">
+                <h2 class="demo-title">Related Components</h2>
+                <div class="related-grid" id="related-grid">
+                    <!-- Related components will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Interface Index is a structured, interaction-focused reference of UI patterns.
+                    Designed for professional implementation, not decorative showcase.
+                </p>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="index.html#categories" class="footer-link">Categories</a>
+                    <a href="index.html#previews" class="footer-link">Previews</a>
+                    <a href="docs/methodology.html" class="footer-link">Documentation</a>
+                </div>
+                <p class="footer-meta">
+                    <span id="version-info">Version 3.0</span> • <span id="total-patterns">Loading patterns...</span> • Continuously updated
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        class ComponentDetail {
+            constructor() {
+                // Get URL parameters
+                this.urlParams = new URLSearchParams(window.location.search);
+                this.componentId = parseInt(this.urlParams.get('id'));
+                this.categoryId = this.urlParams.get('category');
+                
+                // Current component data
+                this.component = null;
+                this.category = null;
+                this.relatedComponents = [];
+                
+                // DOM Elements
+                this.elements = {
+                    componentTitle: document.getElementById('component-title'),
+                    componentCategory: document.getElementById('component-category'),
+                    componentDescription: document.getElementById('component-description'),
+                    componentTags: document.getElementById('component-tags'),
+                    componentId: document.getElementById('component-id'),
+                    categoryLink: document.getElementById('category-link'),
+                    demoContainer: document.getElementById('demo-container'),
+                    refreshBtn: document.getElementById('refresh-demo'),
+                    copyDemoBtn: document.getElementById('copy-demo'),
+                    fullscreenBtn: document.getElementById('fullscreen-demo'),
+                    codeTabs: document.querySelectorAll('.code-tab'),
+                    htmlCode: document.getElementById('html-code'),
+                    cssCode: document.getElementById('css-code'),
+                    jsCode: document.getElementById('js-code'),
+                    codeLanguage: document.getElementById('code-language'),
+                    copyCodeBtn: document.getElementById('copy-code'),
+                    propertiesGrid: document.getElementById('properties-grid'),
+                    relatedGrid: document.getElementById('related-grid'),
+                    toast: document.getElementById('toast'),
+                    toastMessage: document.getElementById('toast-message'),
+                    totalPatterns: document.getElementById('total-patterns')
+                };
+                
+                this.init();
+            }
+            
+            async init() {
+                try {
+                    if (!this.componentId || !this.categoryId) {
+                        this.showError('Missing component or category ID');
+                        return;
+                    }
+                    
+                    // Load component data
+                    await this.loadComponentData();
+                    
+                    // Load category data
+                    await this.loadCategoryData();
+                    
+                    // Load related components
+                    await this.loadRelatedComponents();
+                    
+                    // Update UI
+                    this.updateUI();
+                    
+                    // Setup event listeners
+                    this.setupEventListeners();
+                    
+                    // Generate demo
+                    this.generateDemo();
+                    
+                    // Generate code snippets
+                    this.generateCodeSnippets();
+                    
+                    // Generate properties
+                    this.generateProperties();
+                    
+                    // Generate related components
+                    this.generateRelatedComponents();
+                    
+                    // Update footer
+                    this.updateFooter();
+                    
+                } catch (error) {
+                    console.error('Failed to initialize:', error);
+                    this.showError('Failed to load component data');
+                }
+            }
+            
+            async loadComponentData() {
+                try {
+                    // Convert string ID to number
+                    const id = this.componentId;
+                    
+                    if (isNaN(id)) {
+                        throw new Error(`Invalid component ID: ${this.componentId}`);
+                    }
+                    
+                    // Load the category JSON file
+                    const response = await fetch(`data/${this.categoryId}.json`);
+                    if (!response.ok) throw new Error(`Failed to load category: ${this.categoryId}`);
+                    
+                    const components = await response.json();
+                    
+                    // Find the specific component (compare numbers)
+                    this.component = components.find(comp => comp.id === id);
+                    
+                    if (!this.component) {
+                        throw new Error(`Component not found: ${id} in ${this.categoryId}.json`);
+                    }
+                    
+                    // Add category info
+                    this.component.categoryId = this.categoryId;
+                    
+                } catch (error) {
+                    console.error('Failed to load component:', error);
+                    throw error;
+                }
+            }
+            
+            async loadCategoryData() {
+                // Simple category mapping
+                const categories = {
+                    'buttons': { name: 'Buttons', icon: 'fas fa-mouse-pointer' },
+                    'hover': { name: 'Hover Effects', icon: 'fas fa-hand-pointer' },
+                    'cards': { name: 'Cards', icon: 'fas fa-id-card' },
+                    'forms': { name: 'Forms & Inputs', icon: 'fas fa-edit' },
+                    'navigation': { name: 'Navigation', icon: 'fas fa-compass' },
+                    'modals': { name: 'Modals & Overlays', icon: 'fas fa-window-maximize' },
+                    'feedback': { name: 'Feedback & Status', icon: 'fas fa-info-circle' },
+                    'tables': { name: 'Tables & Data', icon: 'fas fa-table' },
+                    'layout': { name: 'Layout & Structure', icon: 'fas fa-th-large' }
+                };
+                
+                this.category = categories[this.categoryId] || { name: this.categoryId, icon: 'fas fa-shapes' };
+            }
+            
+            async loadRelatedComponents() {
+                try {
+                    const response = await fetch(`data/${this.categoryId}.json`);
+                    if (response.ok) {
+                        const components = await response.json();
+                        // Get 4 random components from the same category (excluding current)
+                        const otherComponents = components
+                            .filter(comp => comp.id !== this.componentId)
+                            .sort(() => Math.random() - 0.5)
+                            .slice(0, 4);
+                        
+                        this.relatedComponents = otherComponents;
+                    }
+                } catch (error) {
+                    console.error('Failed to load related components:', error);
+                }
+            }
+            
+            updateUI() {
+                // Update header information
+                this.elements.componentTitle.textContent = this.component.name;
+                this.elements.componentCategory.textContent = this.category.name;
+                this.elements.componentDescription.textContent = this.component.description;
+                this.elements.componentId.textContent = `ID: ${this.component.id}`;
+                
+                // Update category link
+                this.elements.categoryLink.textContent = this.category.name;
+                this.elements.categoryLink.href = `${this.categoryId}.html`;
+                
+                // Update tags
+                if (this.component.tags && Array.isArray(this.component.tags)) {
+                    this.elements.componentTags.innerHTML = this.component.tags
+                        .map(tag => `<span class="component-tag">${tag}</span>`)
+                        .join('');
+                }
+            }
+            
+            generateDemo() {
+                const container = this.elements.demoContainer;
+                container.innerHTML = '';
+                
+                // Use CSS class if available
+                if (this.component.cssClass) {
+                    const demo = document.createElement('div');
+                    demo.className = this.component.cssClass;
+                    demo.textContent = this.component.name;
+                    demo.style.cssText = `
+                        padding: 20px;
+                        text-align: center;
+                        cursor: pointer;
+                        display: inline-block;
+                        min-width: 200px;
+                    `;
+                    
+                    // Add click interaction
+                    demo.addEventListener('click', () => {
+                        const originalText = demo.textContent;
+                        demo.textContent = 'Clicked!';
+                        setTimeout(() => {
+                            demo.textContent = originalText;
+                        }, 500);
+                    });
+                    
+                    container.appendChild(demo);
+                } else {
+                    // Fallback to generic demo
+                    const demo = document.createElement('div');
+                    demo.className = 'generic-demo';
+                    demo.innerHTML = `
+                        <div style="text-align: center; padding: 40px;">
+                            <i class="fas fa-shapes" style="font-size: 48px; color: var(--accent); margin-bottom: 20px;"></i>
+                            <h3 style="color: white; margin-bottom: 10px;">${this.component.name}</h3>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 14px;">${this.component.description.substring(0, 100)}...</p>
+                        </div>
+                    `;
+                    container.appendChild(demo);
+                }
+            }
+            
+            generateCodeSnippets() {
+                // Generate HTML code
+                const html = this.component.cssClass ? 
+                    `<div class="${this.component.cssClass}">${this.component.name}</div>` :
+                    `<div class="component">${this.component.name}</div>`;
+                
+                this.elements.htmlCode.querySelector('code').textContent = this.formatHTML(html);
+                
+                // Generate CSS code
+                const css = this.generateCSS();
+                this.elements.cssCode.querySelector('code').textContent = css;
+                
+                // Generate JavaScript code
+                const js = this.generateJavaScript();
+                this.elements.jsCode.querySelector('code').textContent = js;
+            }
+            
+            formatHTML(html) {
+                return html
+                    .replace(/></g, '>\n<')
+                    .replace(/(\n<[^>]+>)(?!\n)/g, '$1\n')
+                    .trim();
+            }
+            
+            generateCSS() {
+                if (this.component.cssClass) {
+                    return `/* CSS for .${this.component.cssClass} */\n/* Defined in components.css */\n\n.${this.component.cssClass} {\n  /* Add your custom styles here */\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 12px;\n  padding: 16px 32px;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: all 0.3s ease;\n}\n\n.${this.component.cssClass}:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 10px 30px rgba(255, 55, 95, 0.2);\n}`;
+                }
+                
+                return "/* No CSS class defined for this component */";
+            }
+            
+            generateJavaScript() {
+                if (this.component.cssClass) {
+                    return `// JavaScript for ${this.component.name}\n// Add interactivity to your component\n\ndocument.querySelector('.${this.component.cssClass}').addEventListener('click', function() {\n  console.log('${this.component.name} clicked!');\n  // Add your click handler here\n});`;
+                }
+                
+                return "// No JavaScript defined for this component";
+            }
+            
+            generateProperties() {
+                this.elements.propertiesGrid.innerHTML = '';
+                
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+                
+                if (this.component.cssClass) {
+                    propertyCard.innerHTML = `
+                        <div class="property-header">
+                            <span class="property-name">CSS Class</span>
+                            <span class="property-type">class</span>
+                        </div>
+                        <div class="property-value">${this.component.cssClass}</div>
+                    `;
+                } else {
+                    propertyCard.innerHTML = `
+                        <div class="property-header">
+                            <span class="property-name">No properties defined</span>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.5); font-size: 14px;">
+                            This component doesn't have defined properties.
+                        </p>
+                    `;
+                }
+                
+                this.elements.propertiesGrid.appendChild(propertyCard);
+            }
+            
+            generateRelatedComponents() {
+                this.elements.relatedGrid.innerHTML = '';
+                
+                if (this.relatedComponents.length === 0) {
+                    const emptyMsg = document.createElement('div');
+                    emptyMsg.className = 'related-card';
+                    emptyMsg.innerHTML = `
+                        <div class="related-category">${this.category.name}</div>
+                        <h3 class="related-title">No related components</h3>
+                        <p class="related-description">Explore other components in this category</p>
+                    `;
+                    this.elements.relatedGrid.appendChild(emptyMsg);
+                    return;
+                }
+                
+                this.relatedComponents.forEach(component => {
+                    const relatedCard = document.createElement('div');
+                    relatedCard.className = 'related-card';
+                    relatedCard.innerHTML = `
+                        <div class="related-category">${this.category.name}</div>
+                        <h3 class="related-title">${component.name}</h3>
+                        <p class="related-description">${component.description.substring(0, 80)}...</p>
+                    `;
+                    
+                    relatedCard.addEventListener('click', () => {
+                        window.location.href = `component-detail.html?id=${component.id}&category=${this.categoryId}`;
+                    });
+                    
+                    this.elements.relatedGrid.appendChild(relatedCard);
+                });
+            }
+            
+            setupEventListeners() {
+                // Refresh demo button
+                this.elements.refreshBtn.addEventListener('click', () => {
+                    this.generateDemo();
+                });
+                
+                // Copy demo HTML button
+                this.elements.copyDemoBtn.addEventListener('click', () => {
+                    const html = this.component.cssClass ? 
+                        `<div class="${this.component.cssClass}">${this.component.name}</div>` :
+                        `<div>${this.component.name}</div>`;
+                    this.copyToClipboard(html, 'Demo HTML copied to clipboard!');
+                });
+                
+                // Code tabs
+                this.elements.codeTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        // Remove active class from all tabs
+                        this.elements.codeTabs.forEach(t => t.classList.remove('active'));
+                        
+                        // Add active class to clicked tab
+                        tab.classList.add('active');
+                        
+                        // Show corresponding code
+                        const tabId = tab.dataset.tab;
+                        this.showCodeTab(tabId);
+                    });
+                });
+                
+                // Copy code button
+                this.elements.copyCodeBtn.addEventListener('click', () => {
+                    const activeTab = document.querySelector('.code-tab.active');
+                    const tabId = activeTab.dataset.tab;
+                    const codeElement = document.getElementById(`${tabId}-code`);
+                    const code = codeElement.querySelector('code').textContent;
+                    
+                    this.copyToClipboard(code, `${tabId.toUpperCase()} code copied to clipboard!`);
+                });
+            }
+            
+            showCodeTab(tabId) {
+                // Hide all code blocks
+                this.elements.htmlCode.style.display = 'none';
+                this.elements.cssCode.style.display = 'none';
+                this.elements.jsCode.style.display = 'none';
+                
+                // Show selected code block
+                document.getElementById(`${tabId}-code`).style.display = 'block';
+                
+                // Update language label
+                this.elements.codeLanguage.textContent = tabId.toUpperCase();
+            }
+            
+            async copyToClipboard(text, message) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    this.showToast(message, 'success');
+                } catch (error) {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    this.showToast(message, 'success');
+                }
+            }
+            
+            showToast(message, type = 'success') {
+                this.elements.toastMessage.textContent = message;
+                this.elements.toast.className = `toast ${type}`;
+                this.elements.toast.classList.add('show');
+                
+                setTimeout(() => {
+                    this.elements.toast.classList.remove('show');
+                }, 3000);
+            }
+            
+            async updateFooter() {
+                try {
+                    // Simple total count
+                    this.elements.totalPatterns.textContent = `1,410+ patterns`;
+                } catch (error) {
+                    console.error('Failed to update footer:', error);
+                }
+            }
+            
+            showError(message) {
+                const main = document.querySelector('main');
+                main.innerHTML = `
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h2>Error Loading Component</h2>
+                        <p>${message}</p>
+                        <a href="index.html" class="back-btn">Back to Home</a>
+                    </div>
+                `;
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ComponentDetail();
+        });
+    </script>
+</body>
+</html>

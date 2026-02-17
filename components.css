@@ -1,0 +1,1341 @@
+/* ========================================
+   THE DEFINITIVE PREMIUM BUTTON COLLECTION
+   120 World-Class Static Designs
+   Interface Index - Professional UI Library
+   ======================================== */
+
+/* ===== SECTION 1: CINEMATIC GRADIENT & LIGHT (1-20) ===== */
+
+/* 1. Aurora Borealis */
+.btn-aurora-borealis {
+    background: linear-gradient(135deg, #1b3b4f, #2a5f6e, #4a7c7c, #6b8f7a, #8ba384);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 10px 25px -5px rgba(0, 150, 150, 0.3);
+}
+
+/* 2. Liquid Sunset */
+.btn-liquid-sunset {
+    background: linear-gradient(145deg, #ff7e5f, #feb47b, #ff6b6b, #f9d423);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 15px 25px -8px rgba(255, 107, 107, 0.4);
+}
+
+/* 3. Dual-Light Source */
+.btn-dual-light {
+    background: radial-gradient(circle at 20% 30%, #ffd166, #ffb347, #ff8c42);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: -5px -5px 15px rgba(255, 200, 100, 0.3), 5px 5px 15px rgba(255, 100, 50, 0.3);
+}
+
+/* 4. Volumetric Glow */
+.btn-volumetric-glow {
+    background: #2c3e50;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 0 0 20px #00b4d8, 0 0 40px rgba(0, 180, 216, 0.3);
+}
+
+/* 5. Prism Glass */
+.btn-prism-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 6. Neon Plasma Core */
+.btn-plasma-core {
+    background: #0b132b;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 0 30px #bc4a9c;
+}
+
+/* 7. Soft Bloom Edge */
+.btn-bloom-edge {
+    background: #1a1a2e;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 0 30px rgba(0, 206, 209, 0.3);
+}
+
+/* 8. Multi-Stop Gradient */
+.btn-multi-stop {
+    background: linear-gradient(145deg, #4158D0, #C850C0, #FFCC70, #4158D0);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+}
+
+/* 9. Frosted Dark */
+.btn-frosted-dark {
+    background: #0f172a;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* 10. Glass Strip */
+.btn-glass-strip {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 11. Radiant Halo */
+.btn-radiant-halo {
+    background: #2d1b4e;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+}
+
+/* 12. Chrome Gradient */
+.btn-chrome-gradient {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8, #a0a0a0);
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* 13. Holographic Spectrum */
+.btn-holo-spectrum {
+    background: linear-gradient(135deg, #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 14. Glossy Liquid */
+.btn-glossy-liquid {
+    background: radial-gradient(circle at 30% 30%, #fff9e6, #ffd89c);
+    color: #4a2e1e;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 15px 20px -10px rgba(255, 200, 100, 0.5), inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 15. RGB Ambient */
+.btn-rgb-ambient {
+    background: #0f0f0f;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00, 0 0 40px #0000ff;
+}
+
+/* 16. Melted Candy */
+.btn-candy-melt {
+    background: linear-gradient(145deg, #ff6b8b, #ff8e9e, #ffb3c6);
+    color: #4a0f0f;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.5rem;
+    border: none;
+    box-shadow: 0 10px 0 #b3445c, 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 17. Ambient Underlit */
+.btn-underlit {
+    background: #2c1810;
+    color: #ffb6a0;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 0 10px 20px rgba(255, 140, 100, 0.3), inset 0 -5px 10px rgba(255, 200, 150, 0.2);
+}
+
+/* 18. Translucent Frame */
+.btn-translucent-frame {
+    background: transparent;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 19. Diffused Backlit */
+.btn-backlit {
+    background: #1a2639;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 -10px 20px rgba(100, 200, 255, 0.3);
+}
+
+/* 20. Crystal Panel */
+.btn-crystal-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== SECTION 2: HYPER-REAL SURFACE (21-40) ===== */
+
+/* 21. Soft Silicone */
+.btn-silicone {
+    background: #404040;
+    color: #e0e0e0;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 5px 0 #2a2a2a, 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 22. High-Polish Acrylic */
+.btn-acrylic-polish {
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    color: #333;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 23. Brushed Titanium */
+.btn-titanium {
+    background: linear-gradient(145deg, #4a4e5a, #2d3138);
+    color: #d1d5db;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    border: none;
+}
+
+/* 24. Liquid Metal */
+.btn-liquid-metal {
+    background: linear-gradient(145deg, #b0b0b0, #808080, #c0c0c0, #606060);
+    color: #1a1a1a;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* 25. Car Paint Metallic */
+.btn-car-paint {
+    background: linear-gradient(145deg, #2b6c8c, #1e4e6f, #2b6c8c);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* 26. Ceramic Matte */
+.btn-ceramic {
+    background: #ece8dd;
+    color: #4a3b2c;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d6cec0;
+    box-shadow: 0 5px 0 #c2b9a8, 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 27. Frosted Acrylic Edge - UNIQUE: Edge-lit glow effect */
+.btn-frosted-edge {
+    background: #1f3a4b;
+    color: #b3e5fc;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 30px rgba(100, 200, 255, 0.2), inset 0 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 28. Soft Rubber Industrial */
+.btn-rubber-industrial {
+    background: #2c3e50;
+    color: #bdc3c7;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 8px 0 #1a2632, 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 29. Transparent Resin */
+.btn-resin {
+    background: rgba(255, 242, 213, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #5d4a36;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 242, 213, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 30. Ice Cube Glass */
+.btn-ice-cube {
+    background: rgba(210, 240, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #e0f2fe;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 31. Marble Inlay */
+.btn-marble-inlay {
+    background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+    color: #424242;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* 32. Carbon Fiber Gloss */
+.btn-carbon-gloss {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* 33. Embossed Leather */
+.btn-leather {
+    background: #8b5a2b;
+    color: #f5e6d3;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 8px 0 #5d3e1e, 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 34. Satin Aluminum */
+.btn-satin-aluminum {
+    background: linear-gradient(145deg, #b8b8b8, #d4d4d4, #a0a0a0);
+    color: #2a2a2a;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), inset 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/* 35. Minimal Concrete */
+.btn-concrete {
+    background: #7f8c8d;
+    color: #ecf0f1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    box-shadow: 0 5px 0 #5d6d6e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 36. Stone Textured - UNIQUE: Rough texture simulation */
+.btn-stone {
+    background: #8e7c6a;
+    color: #f0e6d8;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    border: none;
+    box-shadow: inset 0 0 0 2px #b5a592;
+}
+
+/* 37. Frosted Polycarbonate */
+.btn-polycarbonate {
+    background: rgba(52, 73, 94, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #ecf0f1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 38. Ultra-Matte Polymer */
+.btn-ultra-matte {
+    background: #1a1a1a;
+    color: #f0f0f0;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    border: none;
+    box-shadow: none;
+}
+
+/* 39. Engraved Metal */
+.btn-engraved-metal {
+    background: #b0bec5;
+    color: #37474f;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    border: none;
+    box-shadow: inset 2px 2px 5px #8e9aa3, inset -2px -2px 5px #d2dfe7;
+}
+
+/* 40. Deep Gloss Enamel */
+.btn-enamel {
+    background: #c44536;
+    color: #fff1e6;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 2px solid #772e1f;
+    box-shadow: 0 5px 0 #772e1f, 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== SECTION 3: LAYERED & DIMENSIONAL (41-60) ===== */
+
+/* 41. Triple-Layer Stack */
+.btn-triple-stack {
+    background: #1976d2;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 5px 0 #0d47a1, 0 8px 0 #0a356b, 0 12px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 42. Offset Shadow Hybrid */
+.btn-offset-hybrid {
+    background: #2e7d32;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 4px 4px 0 #1b5e20, 8px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 43. Multi-Panel Segmented */
+.btn-segmented {
+    background: linear-gradient(90deg, #1976d2 33%, #bbdefb 33%, #bbdefb 66%, #1976d2 66%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #1976d2;
+}
+
+/* 44. Framed Inner Capsule */
+.btn-framed-inner {
+    background: #f5f5f5;
+    color: #263238;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #607d8b;
+    box-shadow: inset 0 0 0 5px #eceff1;
+}
+
+/* 45. Dual Depth Split */
+.btn-dual-depth {
+    background: linear-gradient(145deg, #546e7a 50%, #29434e 50%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 8px 0 #001418, 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 46. Layered Glass Over Matte - UNIQUE: Multiple layer effect */
+.btn-glass-matte {
+    background: #263238;
+    color: #eceff1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 0 0 4px #2f3d44, 0 0 0 8px #1a2227;
+}
+
+/* 47. Hollow Frame with Fill */
+.btn-hollow-fill {
+    background: transparent;
+    color: #00acc1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #00acc1;
+}
+
+/* 48. Floating Inner Label */
+.btn-float-label {
+    background: #311b92;
+    color: white;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 15px 20px -10px rgba(49, 27, 146, 0.4);
+}
+
+/* 49. Raised Border Over Soft */
+.btn-raised-border {
+    background: #37474f;
+    color: #cfd8dc;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #78909c;
+    box-shadow: 0 5px 0 #263238;
+}
+
+/* 50. Transparent Shell + Core */
+.btn-shell-core {
+    background: #ffb74d;
+    color: #bf360c;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: 4px solid #ff9800;
+}
+
+/* 51. Double Elevation */
+.btn-double-elevation {
+    background: #5e35b1;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 5px 0 #4527a0, 0 10px 15px rgba(94, 53, 177, 0.3);
+}
+
+/* 52. Split Level Surface */
+.btn-split-level {
+    background: linear-gradient(45deg, #00838f 50%, #006064 50%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* 53. Soft Indented Text */
+.btn-indented-text {
+    background: #eceff1;
+    color: #37474f;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: inset 2px 2px 5px #b0bec5, inset -2px -2px 5px white;
+}
+
+/* 54. Layered Glow + Frame */
+.btn-glow-frame {
+    background: #1e1e2f;
+    color: #a0e7ff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 20px #00d4ff;
+}
+
+/* 55. Capsule Inside Capsule - UNIQUE: Double border radius effect */
+.btn-capsule-in-capsule {
+    background: #283593;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: 3px solid #5c6bc0;
+    box-shadow: inset 0 0 0 6px #1a237e;
+}
+
+/* 56. Inner Card Shell */
+.btn-card-shell {
+    background: white;
+    color: #263238;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #b0bec5;
+    box-shadow: 0 2px 0 #90a4ae, 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 57. Overlapping Panels */
+.btn-overlap {
+    background: #ff6f00;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 5px 5px 0 #ffb300;
+}
+
+/* 58. Elevated Badge Block */
+.btn-badge-block {
+    background: #d32f2f;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.25rem;
+    border: none;
+    box-shadow: 0 4px 0 #b71c1c;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* 59. Framed Floating Text */
+.btn-frame-text {
+    background: transparent;
+    color: #0288d1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #0288d1;
+}
+
+/* 60. Border-Within-Border */
+.btn-border-within {
+    background: #263238;
+    color: #eceff1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 3px double #78909c;
+    box-shadow: inset 0 0 0 3px #37474f;
+}
+
+/* ===== SECTION 4: EXPERIMENTAL COLOR (61-80) ===== */
+
+/* 61. Duotone Light Split */
+.btn-duotone-split {
+    background: linear-gradient(45deg, #ff4d4d 50%, #4d79ff 50%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 62. Radial Burst */
+.btn-radial-burst {
+    background: radial-gradient(circle at 30% 30%, #ffd700, #ff8c00, #ff4500);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+}
+
+/* 63. Center Glow */
+.btn-center-glow {
+    background: radial-gradient(circle at center, #ffffff, #4fc3f7);
+    color: #01579b;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 0 30px #4fc3f7;
+}
+
+/* 64. Dark Core Bright Edge */
+.btn-dark-core {
+    background: radial-gradient(circle at center, #1a1a1a, #00bcd4);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+}
+
+/* 65. Inverted Gradient Frame */
+.btn-invert-gradient {
+    background: radial-gradient(circle at center, #00bcd4, #1a1a1a);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+}
+
+/* 66. Diagonal Color Slice */
+.btn-diagonal-slice {
+    background: linear-gradient(135deg, #f06292 50%, #ba68c8 50%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* 67. Corner Accent Pop */
+.btn-corner-accent {
+    background: #303030;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 30px 0 0 #ff6b6b inset;
+}
+
+/* 68. Color Block Segmented */
+.btn-color-block {
+    background: linear-gradient(90deg, #ff6b6b 50%, #4ecdc4 50%);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* 69. Multi-Tone Glass Strip */
+.btn-tone-strip {
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+}
+
+/* 70. Neon Edge Fade - UNIQUE: Edge glow with gradient */
+.btn-neon-fade {
+    background: #0f0f1a;
+    color: #0ff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 30px #0ff, inset 0 0 20px #0ff;
+}
+
+/* 71. Chromatic Aberration */
+.btn-chromatic {
+    background: #1a1a2e;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-shadow: -2px -2px 0 #ff0000, 2px 2px 0 #00ffff;
+}
+
+/* 72. Thermal Heat Map */
+.btn-thermal {
+    background: linear-gradient(45deg, #000428, #004e92, #00a8cc, #0ff);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+/* 73. Vaporwave Palette */
+.btn-vaporwave {
+    background: linear-gradient(135deg, #ff6ad5, #c774e8, #ad8cff, #8795ff);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: 2px solid #ffb3ff;
+    box-shadow: 0 0 20px #ff6ad5;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* 74. Monochrome with Highlight */
+.btn-mono-highlight {
+    background: #2c3e50;
+    color: #ecf0f1;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    border-left: 5px solid #f1c40f;
+}
+
+/* 75. Matte Black Electric Edge */
+.btn-black-edge {
+    background: #0a0a0a;
+    color: #00ff9d;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #00ff9d;
+}
+
+/* 76. Muted Earth Gold Trim */
+.btn-earth-gold {
+    background: #5d4037;
+    color: #ffd54f;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid #ffb300;
+    box-shadow: 0 5px 0 #b26500;
+}
+
+/* 77. Pastel Frost */
+.btn-pastel-frost {
+    background: rgba(255, 209, 220, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #845162;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 78. Dark Steel Cyan Glow */
+.btn-steel-glow {
+    background: #2c3a47;
+    color: #7efff5;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    border: none;
+    box-shadow: 0 0 15px #7efff5;
+}
+
+/* 79. High-Contrast Editorial */
+.btn-editorial {
+    background: white;
+    color: #d32f2f;
+    font-weight: 800;
+    padding: 0.75rem 2rem;
+    border-radius: 0;
+    border: 4px double #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 80. Deep Indigo Pink Light */
+.btn-indigo-pink {
+    background: radial-gradient(circle at 70% 30%, #ff99cc, #4b0082);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+}
+
+/* ===== SECTION 5: GEOMETRY & SHAPE (81-100) ===== */
+
+/* 81. Asymmetric Capsule */
+.btn-asymmetric-capsule {
+    background: #ff7043;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 3rem 1rem 3rem 1rem;
+    border: none;
+}
+
+/* 82. Soft-Edge Squircle */
+.btn-soft-squircle {
+    background: #5c6bc0;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 40% 40% 40% 40% / 40% 40% 40% 40%;
+}
+
+/* 83. Cut-Corner Frame */
+.btn-cut-corner-frame {
+    background: #7e57c2;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+/* 84. Skewed Glass Panel */
+.btn-skewed-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: skewX(-5deg);
+}
+
+/* 85. Angled Capsule with Straight Base */
+.btn-angled-capsule {
+    background: #26a69a;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 3rem 3rem 1rem 1rem;
+}
+
+/* 86. Half-Rounded Split */
+.btn-half-rounded {
+    background: #ef5350;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 3rem 0.5rem 0.5rem 3rem;
+}
+
+/* 87. Pill with Inner Sharp Core - UNIQUE: Complex border radius */
+.btn-pill-sharp {
+    background: #ab47bc;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: inset 0 0 0 4px #8e24aa;
+}
+
+/* 88. Rounded Outer Sharp Inner */
+.btn-round-sharp {
+    background: #ffa726;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 3rem 0.5rem 0.5rem 3rem;
+    border: none;
+}
+
+/* 89. Side Notch Accent */
+.btn-notch {
+    background: #66bb6a;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 80%);
+}
+
+/* 90. Slanted Frame Minimal */
+.btn-slanted-frame {
+    background: #42a5f5;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 3px solid white;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+/* 91. Offset Corner Highlight */
+.btn-offset-corner {
+    background: #7b1fa2;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    box-shadow: -5px -5px 0 #ffd54f inset;
+}
+
+/* 92. Capsule with Extended Tail */
+.btn-tail {
+    background: #ec407a;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem 0.5rem 0.5rem 3rem;
+    border: none;
+}
+
+/* 93. Rectangular with Deep Curve */
+.btn-deep-curve {
+    background: #29b6f6;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50% 0.5rem 0.5rem 50%;
+}
+
+/* 94. Semi-Circular Capsule */
+.btn-semi-circle {
+    background: #ff8a65;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 3rem 0 0 3rem;
+}
+
+/* 95. Hexagonal Soft */
+.btn-hex {
+    background: #ba68c8;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* 96. Minimal Trapezoid */
+.btn-trapezoid {
+    background: #4fc3f7;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+/* 97. Soft Diamond */
+.btn-diamond {
+    background: #ffb74d;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* 98. Organic Blob Capsule */
+.btn-blob-capsule {
+    background: #4db6ac;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 80% 20% 70% 30% / 30% 60% 40% 70%;
+}
+
+/* 99. Dual Shape Hybrid - UNIQUE: Mixed shape */
+.btn-dual-shape {
+    background: #ff8a5c;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 3rem 0 3rem 0;
+}
+
+/* 100. Center Cut Frame */
+.btn-center-cut {
+    background: #ba2d0b;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+}
+
+/* ===== SECTION 6: SIGNATURE PREMIUM (101-120) ===== */
+
+/* 101. Liquid Glass Premium */
+.btn-liquid-glass {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(200, 220, 255, 0.1));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* 102. Frosted Luxury */
+.btn-frost-luxury {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #d4af37;
+    font-weight: 600;
+    padding: 0.75rem 2.5rem;
+    border-radius: 3rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 103. Cinematic Depth */
+.btn-cinematic {
+    background: #0a0a0a;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    border: none;
+    box-shadow: 0 20px 30px -10px rgba(255, 215, 0, 0.3);
+}
+
+/* 104. Shadowless Ultra Minimal - UNIQUE: No shadow but with subtle border glow */
+.btn-shadowless {
+    background: #2d2d2d;
+    color: #f0f0f0;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    border: 1px solid #404040;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* 105. Bold Brutalist Slab */
+.btn-brutalist-slab {
+    background: #d32f2f;
+    color: white;
+    font-weight: 800;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border: 4px solid #0a0a0a;
+    box-shadow: 12px 12px 0 #0a0a0a;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+/* 106. High-Fashion Editorial */
+.btn-fashion {
+    background: white;
+    color: #1a1a1a;
+    font-weight: 300;
+    padding: 0.75rem 2.5rem;
+    border-radius: 0;
+    border: none;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.05);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+}
+
+/* 107. Glass Edge Luxury */
+.btn-luxury-edge {
+    background: #1e1e1e;
+    color: #c0a86a;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #c0a86a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 108. Ultra-Soft Floating */
+.btn-ultra-soft {
+    background: #b39ddb;
+    color: #1e1e2f;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 0 15px 25px -8px #9575cd;
+}
+
+/* 109. Deep Matte Subtle Glow */
+.btn-matte-glow {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.3);
+}
+
+/* 110. Hyper Clean Silicon */
+.btn-silicon {
+    background: #1e2a3a;
+    color: #a0c0f0;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #2a3a4a;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* 111. Apple-Inspired Frost */
+.btn-apple-frost {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* 112. Tesla Industrial */
+.btn-tesla {
+    background: #171a20;
+    color: #f4f4f4;
+    font-weight: 600;
+    padding: 0.75rem 2.5rem;
+    border-radius: 0.25rem;
+    border: 3px solid #f4f4f4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* 113. Cyberpunk Neon Frame - UNIQUE: Double neon border */
+.btn-cyber-frame {
+    background: #0a0f0f;
+    color: #0ff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 15px #0ff, inset 0 0 15px #0ff, 4px 4px 0 #0ff, -4px -4px 0 #f0f;
+}
+
+/* 114. Dark Mode Elevated */
+.btn-dark-luxury {
+    background: #0a0a0a;
+    color: #f5f5f5;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* 115. Fintech Polished */
+.btn-fintech {
+    background: #0057b3;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 8px 0 #003d82, 0 12px 20px rgba(0, 87, 179, 0.3);
+}
+
+/* 116. Startup Hero CTA */
+.btn-startup-cta {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 0 20px 30px -10px #ff416c;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 117. Premium SaaS Primary */
+.btn-saas {
+    background: #6366f1;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 10px 20px -5px #6366f1;
+    font-size: 1rem;
+}
+
+/* 118. Ultra Modern Glass - UNIQUE: Multiple glass layers */
+.btn-modern-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3), inset 0 -10px 20px rgba(255, 255, 255, 0.2);
+    font-size: 1.1rem;
+}
+
+/* 119. Designer Portfolio */
+.btn-portfolio {
+    background: transparent;
+    color: #ff3366;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 2px solid #ff3366;
+    font-size: 1.2rem;
+}
+
+/* 120. Flagship Showcase */
+.btn-flagship {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 20px 30px -10px #764ba2, 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}

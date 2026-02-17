@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Index | Components</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        :root {
+            --black: #000000;
+            --dark: #0A0A0A;
+            --darker: #121212;
+            --gray: #1A1A1A;
+            --light-gray: #2A2A2A;
+            --white: #FFFFFF;
+            --off-white: #F0F0F0;
+            --accent: #FF375F;
+            --accent-glow: rgba(255, 55, 95, 0.4);
+            --secondary: #00D4FF;
+            --secondary-glow: rgba(0, 212, 255, 0.3);
+            --tertiary: #9D4EDD;
+            --grid-color: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --success: #10b981;
+            --error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--black);
+            color: var(--off-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Background Effects */
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-30px, -30px) rotate(0.1deg); }
+        }
+
+        .accent-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            filter: blur(1px);
+            box-shadow: 0 0 20px var(--accent);
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .accent-dot:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .accent-dot:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .accent-dot:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+            50% { transform: translate(20px, -20px) scale(1.2); opacity: 1; }
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent), var(--tertiary));
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: var(--white);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, var(--white), #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--off-white);
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Category Header */
+        .category-header {
+            padding: 180px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 55, 95, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .category-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category-icon-large {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+
+        .category-info {
+            flex: 1;
+        }
+
+        .category-tag {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .category-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--white), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .category-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        .category-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* Components Grid */
+        .components-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--accent), #FF6B9D);
+            border-color: var(--accent);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(255, 55, 95, 0.2);
+        }
+
+        .filter-btn .count {
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 10px;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .component-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.03), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .component-card:hover::before {
+            left: 100%;
+        }
+
+        .component-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .component-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .component-id {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(255, 55, 95, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .component-difficulty {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .component-difficulty.beginner {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .component-difficulty.intermediate {
+            background: rgba(255, 159, 10, 0.1);
+            color: #ff9f0a;
+        }
+
+        .component-difficulty.advanced {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+        }
+
+        .component-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .component-description {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .component-preview {
+            height: 200px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .component-preview::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(255, 55, 95, 0.05), 
+                rgba(0, 212, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .component-card:hover .component-preview::after {
+            opacity: 1;
+        }
+
+        .component-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .component-tag {
+            font-size: 12px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .component-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .component-updated {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .component-view-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .component-view-btn:hover {
+            background: rgba(255, 55, 95, 0.1);
+            border-color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top: 2px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error State */
+        .error-state {
+            text-align: center;
+            padding: 60px;
+            background: rgba(255, 55, 95, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            margin: 40px 0;
+            grid-column: 1 / -1;
+        }
+
+        .error-state i {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .footer-meta {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.3);
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .category-title {
+                font-size: 3.5rem;
+            }
+
+            .components-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .nav-links {
+                gap: 25px;
+            }
+            
+            .category-header {
+                padding: 150px 0 60px;
+            }
+            
+            .category-title {
+                font-size: 2.8rem;
+            }
+            
+            .category-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+            }
+            
+            .category-icon-large {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .filter-controls {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-title {
+                font-size: 2.2rem;
+            }
+            
+            .category-description {
+                font-size: 1.1rem;
+            }
+
+            .component-card {
+                padding: 25px;
+            }
+
+            .component-name {
+                font-size: 1.5rem;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="grid-overlay"></div>
+        <div class="accent-dot"></div>
+        <div class="accent-dot"></div>
+        <div class="accent-dot"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">II</div>
+                    <div class="logo-text">Interface Index</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#component-quick-links" class="nav-link">All Components</a></li>
+                    <li><a href="index.html#previews" class="nav-link">Previews</a></li>
+                    <li><a href="docs/methodology.html" class="nav-link">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Header -->
+    <section class="category-header">
+        <div class="container">
+            <div class="category-meta">
+                <div class="category-icon-large" id="category-icon">
+                    <i class="fas fa-shapes"></i>
+                </div>
+                <div class="category-info">
+                    <div class="category-tag">Component Category</div>
+                    <h1 class="category-title" id="category-title">Loading...</h1>
+                    <p class="category-description" id="category-description">
+                        Loading category description...
+                    </p>
+                    <div class="category-stats" id="category-stats">
+                        <div class="stat-item">
+                            <div class="stat-number loading-spinner"></div>
+                            <span>Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Grid -->
+    <section class="components-section">
+        <div class="container">
+            <!-- Filter Controls -->
+            <div class="filter-controls" id="filter-controls">
+                <!-- Filters will be loaded dynamically -->
+            </div>
+
+            <!-- Components Grid -->
+            <div class="components-grid" id="components-grid">
+                <!-- Components will be loaded dynamically -->
+                <div class="component-card loading">
+                    <div class="component-header">
+                        <div class="component-id">#000</div>
+                        <div class="component-difficulty beginner">Loading</div>
+                    </div>
+                    <h3 class="component-name">Loading Component...</h3>
+                    <p class="component-description">Loading component description...</p>
+                    <div class="component-preview">
+                        <span class="loading-spinner"></span>
+                    </div>
+                    <div class="component-tags">
+                        <span class="component-tag">loading</span>
+                    </div>
+                    <div class="component-footer">
+                        <div class="component-updated">Loading...</div>
+                        <button class="component-view-btn">
+                            <i class="fas fa-eye"></i>
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Interface Index is a structured, interaction-focused reference of UI patterns. 
+                    Designed for professional implementation, not decorative showcase.
+                </p>
+                <p class="footer-meta">
+                    <span>Version 3.0</span> • <span id="total-components">Loading...</span> • Continuously updated
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        class CategoryPage {
+            constructor() {
+                this.category = null;
+                this.components = [];
+                this.filteredComponents = [];
+                this.currentFilter = 'all';
+                
+                // DOM Elements
+                this.categoryTitle = document.getElementById('category-title');
+                this.categoryDescription = document.getElementById('category-description');
+                this.categoryIcon = document.getElementById('category-icon');
+                this.categoryStats = document.getElementById('category-stats');
+                this.filterControls = document.getElementById('filter-controls');
+                this.componentsGrid = document.getElementById('components-grid');
+                this.totalComponents = document.getElementById('total-components');
+                this.backToTop = document.getElementById('backToTop');
+                
+                // Initialize
+                this.init();
+            }
+            
+            async init() {
+                // Get category from URL
+                this.category = this.getCategoryFromURL();
+                
+                if (!this.category) {
+                    this.showError('No category specified in URL');
+                    return;
+                }
+                
+                try {
+                    // Load category metadata
+                    await this.loadCategoryData();
+                    
+                    // Load components from JSON file
+                    await this.loadComponents();
+                    
+                    // Setup interactions
+                    this.setupInteractions();
+                    
+                    // Remove loading states
+                    this.removeLoadingStates();
+                    
+                } catch (error) {
+                    console.error('Failed to initialize:', error);
+                    this.showError(`Failed to load ${this.category} data: ${error.message}`);
+                }
+            }
+            
+            getCategoryFromURL() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('category');
+            }
+            
+            async loadCategoryData() {
+                // Category data mapping
+                const categories = {
+                    'buttons': {
+                        title: 'Buttons',
+                        description: 'Interactive button designs with various visual styles, interactions, and animations. From glassmorphism to neumorphism, 3D effects to liquid animations.',
+                        icon: 'fas fa-mouse-pointer',
+                        total: 150,
+                        subcategories: 11,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'hover': {
+                        title: 'Hover Effects',
+                        description: 'Advanced hover interactions for cards, images, text, buttons, icons, and backgrounds. Smooth animations and micro-interactions.',
+                        icon: 'fas fa-hand-pointer',
+                        total: 250,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'cards': {
+                        title: 'Cards',
+                        description: 'Card components with interactive layouts, animations, and content organization patterns for various use cases.',
+                        icon: 'fas fa-id-card',
+                        total: 180,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'forms': {
+                        title: 'Forms & Inputs',
+                        description: 'Form elements with validation, interactive feedback, and modern input patterns for optimal user experience.',
+                        icon: 'fas fa-edit',
+                        total: 200,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'navigation': {
+                        title: 'Navigation',
+                        description: 'Navigation components and menu interactions including navbars, sidebars, dropdowns, and responsive patterns.',
+                        icon: 'fas fa-compass',
+                        total: 140,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'modals': {
+                        title: 'Modals & Overlays',
+                        description: 'Modal windows, popups, tooltips, and overlay interactions with smooth animations and user-friendly behaviors.',
+                        icon: 'fas fa-window-maximize',
+                        total: 120,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'feedback': {
+                        title: 'Feedback & Status',
+                        description: 'User feedback components, loading states, progress indicators, and status notifications.',
+                        icon: 'fas fa-info-circle',
+                        total: 100,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'tables': {
+                        title: 'Tables & Data',
+                        description: 'Data tables, charts, and visualization components with sorting, filtering, and interactive features.',
+                        icon: 'fas fa-table',
+                        total: 90,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    },
+                    'layout': {
+                        title: 'Layout & Structure',
+                        description: 'Layout components, grid systems, and structural patterns for responsive and adaptive designs.',
+                        icon: 'fas fa-th-large',
+                        total: 80,
+                        subcategories: 6,
+                        lastUpdated: 'Jan 2024'
+                    }
+                };
+                
+                const categoryData = categories[this.category];
+                
+                if (!categoryData) {
+                    throw new Error(`Category "${this.category}" not found. Available categories: ${Object.keys(categories).join(', ')}`);
+                }
+                
+                // Update UI
+                this.categoryTitle.textContent = categoryData.title;
+                this.categoryDescription.textContent = categoryData.description;
+                this.categoryIcon.innerHTML = `<i class="${categoryData.icon}"></i>`;
+                
+                // Update stats
+                this.categoryStats.innerHTML = `
+                    <div class="stat-item">
+                        <div class="stat-number">${categoryData.total}</div>
+                        <span>Total Components</span>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">${categoryData.subcategories}</div>
+                        <span>Subcategories</span>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">${categoryData.lastUpdated}</div>
+                        <span>Last Updated</span>
+                    </div>
+                `;
+                
+                this.totalComponents.textContent = `${categoryData.total} components`;
+            }
+            
+            async loadComponents() {
+                try {
+                    // Load from JSON file
+                    const response = await fetch(`data/${this.category}.json`);
+                    
+                    if (!response.ok) {
+                        if (response.status === 404) {
+                            throw new Error(`JSON file not found: data/${this.category}.json`);
+                        } else {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Validate JSON structure
+                    if (!Array.isArray(data)) {
+                        throw new Error(`Invalid JSON format: Expected array in data/${this.category}.json`);
+                    }
+                    
+                    // Validate each component has required fields
+                    data.forEach((component, index) => {
+                        if (!component.id || !component.name || !component.description) {
+                            throw new Error(`Component at index ${index} missing required fields (id, name, description)`);
+                        }
+                    });
+                    
+                    this.components = data;
+                    
+                    // Set filtered components
+                    this.filteredComponents = [...this.components];
+                    
+                    // Generate filters
+                    this.generateFilters();
+                    
+                    // Render components
+                    this.renderComponents();
+                    
+                } catch (error) {
+                    console.error('Failed to load components:', error);
+                    throw new Error(`Could not load components: ${error.message}`);
+                }
+            }
+            
+            generateFilters() {
+                if (this.components.length === 0) {
+                    this.filterControls.innerHTML = `
+                        <div class="error-state" style="grid-column: 1 / -1; margin: 0;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>No Components Found</h3>
+                            <p>The JSON file is empty or contains no valid components.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Get unique difficulties
+                const difficulties = [...new Set(this.components.map(c => c.difficulty).filter(Boolean))];
+                
+                // Create all filter
+                this.filterControls.innerHTML = `
+                    <button class="filter-btn active" data-filter="all">
+                        <span>All Components</span>
+                        <span class="count">${this.components.length}</span>
+                    </button>
+                `;
+                
+                // Add difficulty filters if they exist
+                if (difficulties.length > 0) {
+                    difficulties.forEach(difficulty => {
+                        const count = this.components.filter(c => c.difficulty === difficulty).length;
+                        this.filterControls.innerHTML += `
+                            <button class="filter-btn" data-filter="${difficulty}">
+                                <span>${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</span>
+                                <span class="count">${count}</span>
+                            </button>
+                        `;
+                    });
+                }
+                
+                // Add tag filters (most common tags)
+                const tagCounts = {};
+                this.components.forEach(component => {
+                    if (component.tags && Array.isArray(component.tags)) {
+                        component.tags.forEach(tag => {
+                            if (tag) tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                        });
+                    }
+                });
+                
+                // Get top 4 tags
+                const topTags = Object.entries(tagCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 4);
+                
+                if (topTags.length > 0) {
+                    topTags.forEach(([tag, count]) => {
+                        this.filterControls.innerHTML += `
+                            <button class="filter-btn" data-filter="${tag}">
+                                <span>${tag.charAt(0).toUpperCase() + tag.slice(1)}</span>
+                                <span class="count">${count}</span>
+                            </button>
+                        `;
+                    });
+                }
+                
+                // Add event listeners
+                this.filterControls.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const filter = btn.dataset.filter;
+                        
+                        // Update active state
+                        this.filterControls.querySelectorAll('.filter-btn').forEach(b => {
+                            b.classList.remove('active');
+                        });
+                        btn.classList.add('active');
+                        
+                        // Filter components
+                        this.filterComponents(filter);
+                    });
+                });
+            }
+            
+            filterComponents(filter) {
+                this.currentFilter = filter;
+                
+                if (filter === 'all') {
+                    this.filteredComponents = [...this.components];
+                } else if (['beginner', 'intermediate', 'advanced'].includes(filter)) {
+                    this.filteredComponents = this.components.filter(c => c.difficulty === filter);
+                } else {
+                    this.filteredComponents = this.components.filter(c => 
+                        c.tags && c.tags.includes(filter.toLowerCase())
+                    );
+                }
+                
+                this.renderComponents();
+            }
+            
+            renderComponents() {
+                this.componentsGrid.innerHTML = '';
+                
+                if (this.filteredComponents.length === 0) {
+                    this.componentsGrid.innerHTML = `
+                        <div class="error-state">
+                            <i class="fas fa-search"></i>
+                            <h3>No components found</h3>
+                            <p>Try selecting a different filter or resetting to "All Components"</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                this.filteredComponents.forEach(component => {
+                    const componentCard = document.createElement('div');
+                    componentCard.className = 'component-card';
+                    componentCard.setAttribute('data-component-id', component.id);
+                    
+                    // Format difficulty display
+                    const difficultyDisplay = component.difficulty ? 
+                        `<div class="component-difficulty ${component.difficulty}">${component.difficulty}</div>` : '';
+                    
+                    // Format tags display
+                    const tagsDisplay = component.tags && Array.isArray(component.tags) ? 
+                        component.tags.map(tag => `<span class="component-tag">${tag}</span>`).join('') : '';
+                    
+                    componentCard.innerHTML = `
+                        <div class="component-header">
+                            <div class="component-id">#${component.id.toString().padStart(3, '0')}</div>
+                            ${difficultyDisplay}
+                        </div>
+                        <h3 class="component-name">${component.name}</h3>
+                        <p class="component-description">${component.description}</p>
+                        <div class="component-preview">
+                            ${this.createPreview(component.preview || 'generic', component.name)}
+                        </div>
+                        ${tagsDisplay ? `<div class="component-tags">${tagsDisplay}</div>` : ''}
+                        <div class="component-footer">
+                            <div class="component-updated">${component.updated || 'Recently updated'}</div>
+                            <button class="component-view-btn" data-component-id="${component.id}">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                        </div>
+                    `;
+                    
+                    // Add click event to card
+                    componentCard.addEventListener('click', (e) => {
+                        if (!e.target.closest('.component-view-btn')) {
+                            this.navigateToComponent(component);
+                        }
+                    });
+                    
+                    // Add click event to view button
+                    const viewBtn = componentCard.querySelector('.component-view-btn');
+                    viewBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.navigateToComponent(component);
+                    });
+                    
+                    this.componentsGrid.appendChild(componentCard);
+                });
+            }
+            
+            createPreview(previewType, name) {
+                switch(previewType) {
+                    case 'button':
+                        return `
+                            <button style="
+                                padding: 16px 32px;
+                                background: linear-gradient(135deg, var(--accent), #FF6B9D);
+                                border: none;
+                                border-radius: 12px;
+                                color: var(--white);
+                                font-weight: 600;
+                                font-size: 16px;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                            ">
+                                ${name.substring(0, 15)}...
+                            </button>
+                        `;
+                    case 'card':
+                        return `
+                            <div style="
+                                width: 200px;
+                                height: 150px;
+                                background: rgba(255, 255, 255, 0.03);
+                                border: 1px solid var(--border);
+                                border-radius: 12px;
+                                padding: 20px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                            ">
+                                <div style="height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; width: 70%;"></div>
+                                <div style="height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; width: 50%;"></div>
+                                <div style="height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; width: 60%;"></div>
+                            </div>
+                        `;
+                    case 'form':
+                        return `
+                            <div style="
+                                width: 220px;
+                                background: rgba(255, 255, 255, 0.03);
+                                border: 1px solid var(--border);
+                                border-radius: 12px;
+                                padding: 20px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 15px;
+                            ">
+                                <div style="
+                                    padding: 12px;
+                                    background: rgba(255, 255, 255, 0.05);
+                                    border: 1px solid var(--border);
+                                    border-radius: 8px;
+                                    color: rgba(255, 255, 255, 0.7);
+                                ">
+                                    Input field
+                                </div>
+                                <button style="
+                                    padding: 12px;
+                                    background: linear-gradient(135deg, var(--accent), #FF6B9D);
+                                    border: none;
+                                    border-radius: 8px;
+                                    color: var(--white);
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                ">
+                                    Submit
+                                </button>
+                            </div>
+                        `;
+                    case 'hover':
+                        return `
+                            <div style="
+                                width: 200px;
+                                height: 150px;
+                                background: rgba(255, 255, 255, 0.03);
+                                border: 1px solid var(--border);
+                                border-radius: 12px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: rgba(255, 255, 255, 0.5);
+                                font-weight: 600;
+                            ">
+                                Hover Preview
+                            </div>
+                        `;
+                    default:
+                        return `
+                            <div style="
+                                width: 200px;
+                                height: 150px;
+                                background: rgba(255, 255, 255, 0.03);
+                                border: 1px solid var(--border);
+                                border-radius: 12px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: rgba(255, 255, 255, 0.5);
+                                font-weight: 600;
+                            ">
+                                ${name.substring(0, 20)}...
+                            </div>
+                        `;
+                }
+            }
+            
+            navigateToComponent(component) {
+                // Navigate to component detail page
+                window.location.href = `component-detail.html?id=${component.id}&category=${this.category}`;
+            }
+            
+            setupInteractions() {
+                // Back to top button
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        this.backToTop.classList.add('visible');
+                    } else {
+                        this.backToTop.classList.remove('visible');
+                    }
+                });
+                
+                this.backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                
+                // Parallax effect
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const grid = document.querySelector('.grid-overlay');
+                    if (grid) {
+                        grid.style.transform = `translate(${-scrolled * 0.02}px, ${-scrolled * 0.02}px) rotate(0.1deg)`;
+                    }
+                });
+            }
+            
+            removeLoadingStates() {
+                document.querySelectorAll('.loading').forEach(el => {
+                    el.classList.remove('loading');
+                });
+            }
+            
+            showError(message) {
+                // Clear any existing content
+                this.componentsGrid.innerHTML = '';
+                this.filterControls.innerHTML = '';
+                
+                // Show error message
+                this.componentsGrid.innerHTML = `
+                    <div class="error-state" style="grid-column: 1 / -1;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Error Loading Components</h3>
+                        <p>${message}</p>
+                        <div style="margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.6);">
+                            <p><strong>Required JSON Structure:</strong></p>
+                            <pre style="text-align: left; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin-top: 10px; overflow-x: auto;">
+    [
+      {
+        "id": 1,
+        "name": "Component Name",
+        "description": "Component description",
+        "difficulty": "beginner|intermediate|advanced",
+        "tags": ["tag1", "tag2"],
+        "updated": "Jan 2024",
+        "preview": "button|card|form|hover|generic"
+      }
+    ]
+                            </pre>
+                            <p style="margin-top: 15px;">Expected file: <code>data/${this.category}.json</code></p>
+                        </div>
+                    </div>
+                `;
+                
+                // Remove loading from stats
+                const statNumbers = this.categoryStats.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    if (stat.classList.contains('loading-spinner')) {
+                        stat.classList.remove('loading-spinner');
+                        stat.textContent = '0';
+                    }
+                });
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new CategoryPage();
+        });
+    </script>
+   
+</body>
+</html>

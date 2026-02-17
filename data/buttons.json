@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "name": "Aurora Borealis Layered Glass",
+    "description": "Multi-layered glass effect with flowing aurora colors (green, purple, blue) creating depth and translucency.",
+    "difficulty": "advanced",
+    "tags": ["aurora", "glass", "layered", "ethereal", "northern-lights"],
+    "preview": "button",
+    "cssClass": "btn-aurora-borealis"
+  },
+  {
+    "id": 2,
+    "name": "Liquid Sunset Blend with Specular Highlight",
+    "description": "Warm sunset gradient with liquid movement and bright specular highlight for wet appearance.",
+    "difficulty": "advanced",
+    "tags": ["liquid", "sunset", "specular", "wet", "gradient"],
+    "preview": "button",
+    "cssClass": "btn-liquid-sunset"
+  },
+  {
+    "id": 3,
+    "name": "Dual-Light Source Gradient Button",
+    "description": "Two distinct light sources creating cross-gradient with realistic lighting from different angles.",
+    "difficulty": "intermediate",
+    "tags": ["dual-light", "gradient", "lighting", "realistic"],
+    "preview": "button",
+    "cssClass": "btn-dual-light"
+  },
+  {
+    "id": 4,
+    "name": "Volumetric Glow Capsule",
+    "description": "Pill-shaped button with internal volumetric glow giving 3D light presence.",
+    "difficulty": "advanced",
+    "tags": ["volumetric", "glow", "capsule", "3d", "light"],
+    "preview": "button",
+    "cssClass": "btn-volumetric-glow"
+  },
+  {
+    "id": 5,
+    "name": "Prism-Refracted Glass Surface",
+    "description": "Glass surface with prism-like light refraction creating rainbow edges.",
+    "difficulty": "advanced",
+    "tags": ["prism", "refraction", "glass", "rainbow", "light"],
+    "preview": "button",
+    "cssClass": "btn-prism-glass"
+  },
+  {
+    "id": 6,
+    "name": "Neon Plasma Core Button",
+    "description": "Intense neon center with plasma-like energy radiating outward.",
+    "difficulty": "intermediate",
+    "tags": ["neon", "plasma", "core", "energy", "glow"],
+    "preview": "button",
+    "cssClass": "btn-plasma-core"
+  },
+  {
+    "id": 7,
+    "name": "Soft Bloom Edge Button",
+    "description": "Gentle bloom effect concentrated on edges for dreamy appearance.",
+    "difficulty": "intermediate",
+    "tags": ["bloom", "edge", "soft", "dreamy", "glow"],
+    "preview": "button",
+    "cssClass": "btn-bloom-edge"
+  },
+  {
+    "id": 8,
+    "name": "Multi-Stop Gradient Depth Panel",
+    "description": "Complex gradient with multiple color stops creating illusion of depth.",
+    "difficulty": "intermediate",
+    "tags": ["multi-stop", "gradient", "depth", "complex"],
+    "preview": "button",
+    "cssClass": "btn-multi-stop"
+  },
+  {
+    "id": 9,
+    "name": "Frosted Gradient Over Dark Backplate",
+    "description": "Frosted glass gradient layer over dark solid base for contrast.",
+    "difficulty": "intermediate",
+    "tags": ["frosted", "gradient", "dark", "layered"],
+    "preview": "button",
+    "cssClass": "btn-frosted-dark"
+  },
+  {
+    "id": 10,
+    "name": "Glass Capsule with Internal Light Strip",
+    "description": "Transparent capsule containing internal illuminated strip.",
+    "difficulty": "advanced",
+    "tags": ["glass", "capsule", "internal", "light-strip"],
+    "preview": "button",
+    "cssClass": "btn-glass-strip"
+  },
+  {
+    "id": 11,
+    "name": "Radiant Halo Surface",
+    "description": "Button with radiant halo effect emanating from center.",
+    "difficulty": "intermediate",
+    "tags": ["radiant", "halo", "glow", "center"],
+    "preview": "button",
+    "cssClass": "btn-radiant-halo"
+  },
+  {
+    "id": 12,
+    "name": "Chrome Base with Gradient Reflection",
+    "description": "Realistic chrome base with colorful gradient reflection overlay.",
+    "difficulty": "advanced",
+    "tags": ["chrome", "reflection", "gradient", "metallic"],
+    "preview": "button",
+    "cssClass": "btn-chrome-gradient"
+  },
+  {
+    "id": 13,
+    "name": "Holographic Spectrum Plate",
+    "description": "Full holographic spectrum shifting across surface.",
+    "difficulty": "advanced",
+    "tags": ["holographic", "spectrum", "rainbow", "shifting"],
+    "preview": "button",
+    "cssClass": "btn-holo-spectrum"
+  },
+  {
+    "id": 14,
+    "name": "Glossy Liquid Reflection Button",
+    "description": "High-gloss surface with liquid-like reflection patterns.",
+    "difficulty": "intermediate",
+    "tags": ["glossy", "liquid", "reflection", "shiny"],
+    "preview": "button",
+    "cssClass": "btn-glossy-liquid"
+  },
+  {
+    "id": 15,
+    "name": "RGB Ambient Light Surface",
+    "description": "Gaming-inspired RGB ambient lighting effect around edges.",
+    "difficulty": "beginner",
+    "tags": ["rgb", "ambient", "gaming", "colorful"],
+    "preview": "button",
+    "cssClass": "btn-rgb-ambient"
+  },
+  {
+    "id": 16,
+    "name": "Melted Candy Gloss Button",
+    "description": "Warm, melted candy appearance with high gloss finish.",
+    "difficulty": "intermediate",
+    "tags": ["candy", "melted", "gloss", "sweet"],
+    "preview": "button",
+    "cssClass": "btn-candy-melt"
+  },
+  {
+    "id": 17,
+    "name": "Ambient Underlit Capsule",
+    "description": "Capsule with subtle ambient lighting from bottom edge.",
+    "difficulty": "intermediate",
+    "tags": ["ambient", "underlit", "capsule", "glow"],
+    "preview": "button",
+    "cssClass": "btn-underlit"
+  },
+  {
+    "id": 18,
+    "name": "Translucent Gradient Frame",
+    "description": "Frame with translucent gradient fill, transparent center.",
+    "difficulty": "intermediate",
+    "tags": ["translucent", "gradient", "frame", "transparent"],
+    "preview": "button",
+    "cssClass": "btn-translucent-frame"
+  },
+  {
+    "id": 19,
+    "name": "Diffused Backlit Button",
+    "description": "Soft, diffused backlight creating ethereal glow.",
+    "difficulty": "intermediate",
+    "tags": ["diffused", "backlit", "glow", "soft"],
+    "preview": "button",
+    "cssClass": "btn-backlit"
+  },
+  {
+    "id": 20,
+    "name": "Frosted Crystal Light Panel",
+    "description": "Crystal-like panel with frosted finish and internal light.",
+    "difficulty": "advanced",
+    "tags": ["crystal", "frosted", "light", "panel"],
+    "preview": "button",
+    "cssClass": "btn-crystal-panel"
+  },
+  {
+    "id": 21,
+    "name": "Soft Silicone Press Surface",
+    "description": "Matte, soft silicone-like texture with subtle press indent.",
+    "difficulty": "beginner",
+    "tags": ["silicone", "soft", "matte", "textured"],
+    "preview": "button",
+    "cssClass": "btn-silicone"
+  },
+  {
+    "id": 22,
+    "name": "High-Polish Acrylic Block",
+    "description": "Crystal-clear acrylic with high-polish finish and slight reflection.",
+    "difficulty": "intermediate",
+    "tags": ["acrylic", "polish", "clear", "reflective"],
+    "preview": "button",
+    "cssClass": "btn-acrylic-polish"
+  },
+  {
+    "id": 23,
+    "name": "Brushed Titanium Slab",
+    "description": "Industrial brushed titanium finish with directional grain.",
+    "difficulty": "intermediate",
+    "tags": ["titanium", "brushed", "metal", "industrial"],
+    "preview": "button",
+    "cssClass": "btn-titanium"
+  },
+  {
+    "id": 24,
+    "name": "Liquid Metal Finish",
+    "description": "Molten, liquid metal appearance with fluid highlights.",
+    "difficulty": "advanced",
+    "tags": ["liquid", "metal", "molten", "fluid"],
+    "preview": "button",
+    "cssClass": "btn-liquid-metal"
+  },
+  {
+    "id": 25,
+    "name": "Car Paint Metallic Button",
+    "description": "Automotive-grade metallic paint with deep gloss and sparkle.",
+    "difficulty": "intermediate",
+    "tags": ["car-paint", "metallic", "automotive", "gloss"],
+    "preview": "button",
+    "cssClass": "btn-car-paint"
+  },
+  {
+    "id": 26,
+    "name": "Ceramic Matte Block",
+    "description": "Smooth ceramic matte finish with subtle warmth.",
+    "difficulty": "beginner",
+    "tags": ["ceramic", "matte", "smooth", "warm"],
+    "preview": "button",
+    "cssClass": "btn-ceramic"
+  },
+  {
+    "id": 27,
+    "name": "Frosted Acrylic Edge",
+    "description": "Clear acrylic with frosted edges, transparent center.",
+    "difficulty": "intermediate",
+    "tags": ["acrylic", "frosted", "edge", "transparent"],
+    "preview": "button",
+    "cssClass": "btn-frosted-edge"
+  },
+  {
+    "id": 28,
+    "name": "Soft Rubber Industrial",
+    "description": "Industrial-grade soft rubber texture with grip appearance.",
+    "difficulty": "beginner",
+    "tags": ["rubber", "industrial", "soft", "grip"],
+    "preview": "button",
+    "cssClass": "btn-rubber-industrial"
+  },
+  {
+    "id": 29,
+    "name": "Transparent Resin Block",
+    "description": "Clear resin block with slight amber tint and smooth finish.",
+    "difficulty": "intermediate",
+    "tags": ["resin", "transparent", "amber", "clear"],
+    "preview": "button",
+    "cssClass": "btn-resin"
+  },
+  {
+    "id": 30,
+    "name": "Ice-Cube Glass Button",
+    "description": "Crystal-clear glass like frozen ice with internal refraction.",
+    "difficulty": "advanced",
+    "tags": ["ice", "glass", "crystal", "frozen", "refraction"],
+    "preview": "button",
+    "cssClass": "btn-ice-cube"
+  },
+  {
+    "id": 31,
+    "name": "Marble Inlay Surface",
+    "description": "Elegant marble pattern inlay with polished finish.",
+    "difficulty": "advanced",
+    "tags": ["marble", "inlay", "luxury", "stone"],
+    "preview": "button",
+    "cssClass": "btn-marble-inlay"
+  },
+  {
+    "id": 32,
+    "name": "Carbon Fiber Gloss Panel",
+    "description": "Woven carbon fiber pattern with high-gloss clear coat.",
+    "difficulty": "intermediate",
+    "tags": ["carbon", "fiber", "gloss", "woven"],
+    "preview": "button",
+    "cssClass": "btn-carbon-gloss"
+  },
+  {
+    "id": 33,
+    "name": "Embossed Leather Patch",
+    "description": "Rich leather texture with embossed pattern and stitching effect.",
+    "difficulty": "advanced",
+    "tags": ["leather", "embossed", "luxury", "textured"],
+    "preview": "button",
+    "cssClass": "btn-leather"
+  },
+  {
+    "id": 34,
+    "name": "Satin Aluminum Capsule",
+    "description": "Smooth satin aluminum finish with subtle sheen.",
+    "difficulty": "intermediate",
+    "tags": ["aluminum", "satin", "metal", "capsule"],
+    "preview": "button",
+    "cssClass": "btn-satin-aluminum"
+  },
+  {
+    "id": 35,
+    "name": "Minimal Concrete Slab",
+    "description": "Raw concrete texture with brutalist minimal aesthetic.",
+    "difficulty": "beginner",
+    "tags": ["concrete", "brutalist", "raw", "minimal"],
+    "preview": "button",
+    "cssClass": "btn-concrete"
+  },
+  {
+    "id": 36,
+    "name": "Stone Textured Minimal",
+    "description": "Natural stone texture with honed finish.",
+    "difficulty": "intermediate",
+    "tags": ["stone", "textured", "natural", "matte"],
+    "preview": "button",
+    "cssClass": "btn-stone"
+  },
+  {
+    "id": 37,
+    "name": "Frosted Polycarbonate",
+    "description": "Durable polycarbonate with uniform frosted finish.",
+    "difficulty": "beginner",
+    "tags": ["polycarbonate", "frosted", "durable", "matte"],
+    "preview": "button",
+    "cssClass": "btn-polycarbonate"
+  },
+  {
+    "id": 38,
+    "name": "Ultra-Matte Polymer Button",
+    "description": "Ultra-matte polymer with zero reflection, deep black.",
+    "difficulty": "beginner",
+    "tags": ["polymer", "ultra-matte", "non-reflective", "black"],
+    "preview": "button",
+    "cssClass": "btn-ultra-matte"
+  },
+  {
+    "id": 39,
+    "name": "Engraved Metal Plate",
+    "description": "Metal plate with engraved text effect and patina.",
+    "difficulty": "intermediate",
+    "tags": ["engraved", "metal", "plate", "patina"],
+    "preview": "button",
+    "cssClass": "btn-engraved-metal"
+  },
+  {
+    "id": 40,
+    "name": "Deep Gloss Enamel Surface",
+    "description": "Deep, wet-look enamel with mirror-like reflection.",
+    "difficulty": "intermediate",
+    "tags": ["enamel", "gloss", "wet-look", "mirror"],
+    "preview": "button",
+    "cssClass": "btn-enamel"
+  },
+  {
+    "id": 41,
+    "name": "Triple-Layer Floating Stack",
+    "description": "Three distinct layers stacked with floating effect.",
+    "difficulty": "advanced",
+    "tags": ["layered", "stack", "floating", "3d"],
+    "preview": "button",
+    "cssClass": "btn-triple-stack"
+  },
+  {
+    "id": 42,
+    "name": "Offset Shadow + Highlight Hybrid",
+    "description": "Combined offset shadow and highlight for unique depth.",
+    "difficulty": "intermediate",
+    "tags": ["offset", "shadow", "highlight", "depth"],
+    "preview": "button",
+    "cssClass": "btn-offset-hybrid"
+  },
+  {
+    "id": 43,
+    "name": "Multi-Panel Segmented Button",
+    "description": "Button divided into multiple visual segments/panels.",
+    "difficulty": "intermediate",
+    "tags": ["multi-panel", "segmented", "divided"],
+    "preview": "button",
+    "cssClass": "btn-segmented"
+  },
+  {
+    "id": 44,
+    "name": "Framed Inner Capsule",
+    "description": "Outer frame containing inner capsule element.",
+    "difficulty": "intermediate",
+    "tags": ["framed", "inner", "capsule", "contained"],
+    "preview": "button",
+    "cssClass": "btn-framed-inner"
+  },
+  {
+    "id": 45,
+    "name": "Dual Depth Split Surface",
+    "description": "Surface split into two depth levels within same button.",
+    "difficulty": "advanced",
+    "tags": ["dual-depth", "split", "surface", "levels"],
+    "preview": "button",
+    "cssClass": "btn-dual-depth"
+  },
+  {
+    "id": 46,
+    "name": "Layered Glass Over Matte Core",
+    "description": "Glass top layer over solid matte core for depth.",
+    "difficulty": "advanced",
+    "tags": ["layered", "glass", "matte", "core"],
+    "preview": "button",
+    "cssClass": "btn-glass-matte"
+  },
+  {
+    "id": 47,
+    "name": "Hollow Frame with Inner Fill",
+    "description": "Outer frame with contrasting inner fill color.",
+    "difficulty": "beginner",
+    "tags": ["hollow", "frame", "inner", "fill"],
+    "preview": "button",
+    "cssClass": "btn-hollow-fill"
+  },
+  {
+    "id": 48,
+    "name": "Floating Inner Label Block",
+    "description": "Inner label appears to float within button container.",
+    "difficulty": "intermediate",
+    "tags": ["floating", "inner", "label", "block"],
+    "preview": "button",
+    "cssClass": "btn-float-label"
+  },
+  {
+    "id": 49,
+    "name": "Raised Border Over Soft Base",
+    "description": "Pronounced raised border on soft, matte base.",
+    "difficulty": "beginner",
+    "tags": ["raised", "border", "soft", "base"],
+    "preview": "button",
+    "cssClass": "btn-raised-border"
+  },
+  {
+    "id": 50,
+    "name": "Transparent Shell + Solid Core",
+    "description": "Transparent outer shell revealing solid colored core.",
+    "difficulty": "advanced",
+    "tags": ["transparent", "shell", "solid", "core"],
+    "preview": "button",
+    "cssClass": "btn-shell-core"
+  },
+  {
+    "id": 51,
+    "name": "Double Elevation System",
+    "description": "Two distinct elevation levels creating complex shadow play.",
+    "difficulty": "advanced",
+    "tags": ["double", "elevation", "shadow", "complex"],
+    "preview": "button",
+    "cssClass": "btn-double-elevation"
+  },
+  {
+    "id": 52,
+    "name": "Split Level Surface Panel",
+    "description": "Surface split into different levels with visible seam.",
+    "difficulty": "intermediate",
+    "tags": ["split-level", "surface", "panel", "seam"],
+    "preview": "button",
+    "cssClass": "btn-split-level"
+  },
+  {
+    "id": 53,
+    "name": "Soft Indented Text Plate",
+    "description": "Text area slightly indented into button surface.",
+    "difficulty": "intermediate",
+    "tags": ["indented", "text", "plate", "recessed"],
+    "preview": "button",
+    "cssClass": "btn-indented-text"
+  },
+  {
+    "id": 54,
+    "name": "Layered Glow + Frame Button",
+    "description": "Combination of layered glow effects with framing.",
+    "difficulty": "advanced",
+    "tags": ["layered", "glow", "frame", "combined"],
+    "preview": "button",
+    "cssClass": "btn-glow-frame"
+  },
+  {
+    "id": 55,
+    "name": "Capsule Inside Capsule",
+    "description": "Smaller capsule nested inside larger capsule shape.",
+    "difficulty": "intermediate",
+    "tags": ["capsule", "nested", "inner", "contained"],
+    "preview": "button",
+    "cssClass": "btn-capsule-in-capsule"
+  },
+  {
+    "id": 56,
+    "name": "Inner Card Inside Outer Shell",
+    "description": "Card-like element contained within outer shell.",
+    "difficulty": "intermediate",
+    "tags": ["card", "inner", "outer", "shell"],
+    "preview": "button",
+    "cssClass": "btn-card-shell"
+  },
+  {
+    "id": 57,
+    "name": "Overlapping Panel Button",
+    "description": "Two panels overlapping slightly for dynamic look.",
+    "difficulty": "intermediate",
+    "tags": ["overlapping", "panels", "dynamic"],
+    "preview": "button",
+    "cssClass": "btn-overlap"
+  },
+  {
+    "id": 58,
+    "name": "Elevated Badge-Style Block",
+    "description": "Badge-like elevated block with slight protrusion.",
+    "difficulty": "beginner",
+    "tags": ["badge", "elevated", "block", "protrusion"],
+    "preview": "button",
+    "cssClass": "btn-badge-block"
+  },
+  {
+    "id": 59,
+    "name": "Framed Floating Typography",
+    "description": "Text appears to float within framed container.",
+    "difficulty": "intermediate",
+    "tags": ["framed", "floating", "typography", "text"],
+    "preview": "button",
+    "cssClass": "btn-frame-text"
+  },
+  {
+    "id": 60,
+    "name": "Border-Within-Border System",
+    "description": "Multiple nested borders creating concentric framing.",
+    "difficulty": "intermediate",
+    "tags": ["border", "nested", "concentric", "frame"],
+    "preview": "button",
+    "cssClass": "btn-border-within"
+  },
+  {
+    "id": 61,
+    "name": "Duotone Light Split",
+    "description": "Two complementary colors split with soft light transition.",
+    "difficulty": "beginner",
+    "tags": ["duotone", "light", "split", "complementary"],
+    "preview": "button",
+    "cssClass": "btn-duotone-split"
+  },
+  {
+    "id": 62,
+    "name": "Radial Burst Surface",
+    "description": "Color radiates outward from center in burst pattern.",
+    "difficulty": "intermediate",
+    "tags": ["radial", "burst", "center", "outward"],
+    "preview": "button",
+    "cssClass": "btn-radial-burst"
+  },
+  {
+    "id": 63,
+    "name": "Center Glow Gradient",
+    "description": "Gradient emanating from bright center to darker edges.",
+    "difficulty": "beginner",
+    "tags": ["center", "glow", "gradient", "radial"],
+    "preview": "button",
+    "cssClass": "btn-center-glow"
+  },
+  {
+    "id": 64,
+    "name": "Dark Core with Bright Edge",
+    "description": "Dark center with bright, luminous outer edge.",
+    "difficulty": "intermediate",
+    "tags": ["dark-core", "bright-edge", "contrast", "luminous"],
+    "preview": "button",
+    "cssClass": "btn-dark-core"
+  },
+  {
+    "id": 65,
+    "name": "Inverted Gradient Frame",
+    "description": "Gradient inverted from typical - dark edges, light center.",
+    "difficulty": "beginner",
+    "tags": ["inverted", "gradient", "frame", "reverse"],
+    "preview": "button",
+    "cssClass": "btn-invert-gradient"
+  },
+  {
+    "id": 66,
+    "name": "Diagonal Color Slice",
+    "description": "Sharp diagonal division between two colors.",
+    "difficulty": "beginner",
+    "tags": ["diagonal", "slice", "divided", "color-block"],
+    "preview": "button",
+    "cssClass": "btn-diagonal-slice"
+  },
+  {
+    "id": 67,
+    "name": "Corner Accent Pop",
+    "description": "Vibrant color accent in one corner only.",
+    "difficulty": "beginner",
+    "tags": ["corner", "accent", "pop", "minimal"],
+    "preview": "button",
+    "cssClass": "btn-corner-accent"
+  },
+  {
+    "id": 68,
+    "name": "Color Block Segmented Surface",
+    "description": "Surface divided into distinct color blocks.",
+    "difficulty": "intermediate",
+    "tags": ["color-block", "segmented", "geometric"],
+    "preview": "button",
+    "cssClass": "btn-color-block"
+  },
+  {
+    "id": 69,
+    "name": "Multi-Tone Glass Strip",
+    "description": "Glass effect with multiple color tones in strips.",
+    "difficulty": "advanced",
+    "tags": ["multi-tone", "glass", "strip", "colorful"],
+    "preview": "button",
+    "cssClass": "btn-tone-strip"
+  },
+  {
+    "id": 70,
+    "name": "Neon Edge Fade",
+    "description": "Neon colors fading from edges inward.",
+    "difficulty": "intermediate",
+    "tags": ["neon", "edge", "fade", "inward"],
+    "preview": "button",
+    "cssClass": "btn-neon-fade"
+  },
+  {
+    "id": 71,
+    "name": "Chromatic Aberration Surface",
+    "description": "Intentional RGB split creating chromatic aberration effect.",
+    "difficulty": "advanced",
+    "tags": ["chromatic", "aberration", "rgb", "glitch"],
+    "preview": "button",
+    "cssClass": "btn-chromatic"
+  },
+  {
+    "id": 72,
+    "name": "Thermal Heat Map Button",
+    "description": "Colors mimicking thermal/infrared heat mapping.",
+    "difficulty": "intermediate",
+    "tags": ["thermal", "heat-map", "infrared", "gradient"],
+    "preview": "button",
+    "cssClass": "btn-thermal"
+  },
+  {
+    "id": 73,
+    "name": "Vaporwave Palette Capsule",
+    "description": "Retro vaporwave colors with sunset/pastel aesthetic.",
+    "difficulty": "beginner",
+    "tags": ["vaporwave", "retro", "pastel", "sunset"],
+    "preview": "button",
+    "cssClass": "btn-vaporwave"
+  },
+  {
+    "id": 74,
+    "name": "Monochrome With Highlight Accent",
+    "description": "Grayscale monochrome with single color highlight.",
+    "difficulty": "beginner",
+    "tags": ["monochrome", "highlight", "accent", "minimal"],
+    "preview": "button",
+    "cssClass": "btn-mono-highlight"
+  },
+  {
+    "id": 75,
+    "name": "Matte Black + Electric Edge",
+    "description": "Deep matte black with bright electric-colored edge.",
+    "difficulty": "intermediate",
+    "tags": ["matte-black", "electric", "edge", "contrast"],
+    "preview": "button",
+    "cssClass": "btn-black-edge"
+  },
+  {
+    "id": 76,
+    "name": "Muted Earth + Gold Trim",
+    "description": "Earthy muted tones with elegant gold trim.",
+    "difficulty": "intermediate",
+    "tags": ["earth", "gold", "muted", "elegant"],
+    "preview": "button",
+    "cssClass": "btn-earth-gold"
+  },
+  {
+    "id": 77,
+    "name": "Pastel Frost Capsule",
+    "description": "Soft pastel colors with frosted finish.",
+    "difficulty": "beginner",
+    "tags": ["pastel", "frost", "soft", "capsule"],
+    "preview": "button",
+    "cssClass": "btn-pastel-frost"
+  },
+  {
+    "id": 78,
+    "name": "Dark Steel + Cyan Glow",
+    "description": "Industrial dark steel with vibrant cyan glow.",
+    "difficulty": "intermediate",
+    "tags": ["steel", "dark", "cyan", "glow", "industrial"],
+    "preview": "button",
+    "cssClass": "btn-steel-glow"
+  },
+  {
+    "id": 79,
+    "name": "High-Contrast Editorial Button",
+    "description": "Bold, high-contrast colors for editorial/magazine style.",
+    "difficulty": "beginner",
+    "tags": ["high-contrast", "editorial", "bold", "magazine"],
+    "preview": "button",
+    "cssClass": "btn-editorial"
+  },
+  {
+    "id": 80,
+    "name": "Deep Indigo + Soft Pink Light",
+    "description": "Rich indigo base with soft pink ambient lighting.",
+    "difficulty": "intermediate",
+    "tags": ["indigo", "pink", "ambient", "contrast"],
+    "preview": "button",
+    "cssClass": "btn-indigo-pink"
+  },
+  {
+    "id": 81,
+    "name": "Asymmetric Capsule",
+    "description": "Capsule shape with asymmetrical curves.",
+    "difficulty": "intermediate",
+    "tags": ["asymmetric", "capsule", "unique", "shape"],
+    "preview": "button",
+    "cssClass": "btn-asymmetric-capsule"
+  },
+  {
+    "id": 82,
+    "name": "Soft-Edge Squircle",
+    "description": "Squircle shape with extra soft, rounded edges.",
+    "difficulty": "beginner",
+    "tags": ["squircle", "soft-edge", "rounded", "modern"],
+    "preview": "button",
+    "cssClass": "btn-soft-squircle"
+  },
+  {
+    "id": 83,
+    "name": "Cut-Corner Frame Button",
+    "description": "Frame with corners cut at 45-degree angle.",
+    "difficulty": "intermediate",
+    "tags": ["cut-corner", "frame", "angled", "geometric"],
+    "preview": "button",
+    "cssClass": "btn-cut-corner-frame"
+  },
+  {
+    "id": 84,
+    "name": "Skewed Glass Panel",
+    "description": "Glass panel with subtle skew transformation.",
+    "difficulty": "intermediate",
+    "tags": ["skewed", "glass", "panel", "angled"],
+    "preview": "button",
+    "cssClass": "btn-skewed-glass"
+  },
+  {
+    "id": 85,
+    "name": "Angled Capsule with Straight Base",
+    "description": "Capsule with angled top, straight bottom edge.",
+    "difficulty": "intermediate",
+    "tags": ["angled", "capsule", "straight", "hybrid"],
+    "preview": "button",
+    "cssClass": "btn-angled-capsule"
+  },
+  {
+    "id": 86,
+    "name": "Half-Rounded Split Button",
+    "description": "Split design with one rounded half, one straight.",
+    "difficulty": "intermediate",
+    "tags": ["half-rounded", "split", "hybrid", "unique"],
+    "preview": "button",
+    "cssClass": "btn-half-rounded"
+  },
+  {
+    "id": 87,
+    "name": "Pill with Inner Sharp Core",
+    "description": "Pill-shaped outer with sharp rectangular inner.",
+    "difficulty": "advanced",
+    "tags": ["pill", "sharp", "inner", "contrast"],
+    "preview": "button",
+    "cssClass": "btn-pill-sharp"
+  },
+  {
+    "id": 88,
+    "name": "Rounded Outer + Sharp Inner",
+    "description": "Rounded outer shape with sharp inner element.",
+    "difficulty": "intermediate",
+    "tags": ["rounded", "sharp", "inner", "contrast"],
+    "preview": "button",
+    "cssClass": "btn-round-sharp"
+  },
+  {
+    "id": 89,
+    "name": "Side Notch Accent Button",
+    "description": "Button with decorative notch cut from side.",
+    "difficulty": "intermediate",
+    "tags": ["notch", "side", "accent", "cutout"],
+    "preview": "button",
+    "cssClass": "btn-notch"
+  },
+  {
+    "id": 90,
+    "name": "Slanted Frame Minimal",
+    "description": "Minimal frame with one slanted edge.",
+    "difficulty": "beginner",
+    "tags": ["slanted", "frame", "minimal", "edge"],
+    "preview": "button",
+    "cssClass": "btn-slanted-frame"
+  },
+  {
+    "id": 91,
+    "name": "Offset Corner Highlight",
+    "description": "Highlight concentrated in offset corner position.",
+    "difficulty": "beginner",
+    "tags": ["offset", "corner", "highlight", "accent"],
+    "preview": "button",
+    "cssClass": "btn-offset-corner"
+  },
+  {
+    "id": 92,
+    "name": "Capsule with Extended Tail",
+    "description": "Capsule shape with extended tail element.",
+    "difficulty": "intermediate",
+    "tags": ["capsule", "extended", "tail", "unique"],
+    "preview": "button",
+    "cssClass": "btn-tail"
+  },
+  {
+    "id": 93,
+    "name": "Rectangular with One Deep Curve",
+    "description": "Rectangle with one side deeply curved inward.",
+    "difficulty": "advanced",
+    "tags": ["rectangle", "deep-curve", "organic", "unique"],
+    "preview": "button",
+    "cssClass": "btn-deep-curve"
+  },
+  {
+    "id": 94,
+    "name": "Semi-Circular Capsule",
+    "description": "Capsule ending in semi-circle on one side only.",
+    "difficulty": "intermediate",
+    "tags": ["semi-circle", "capsule", "asymmetric"],
+    "preview": "button",
+    "cssClass": "btn-semi-circle"
+  },
+  {
+    "id": 95,
+    "name": "Hexagonal Soft Button",
+    "description": "Subtle hexagon shape with softened corners.",
+    "difficulty": "intermediate",
+    "tags": ["hexagon", "soft", "geometric", "unique"],
+    "preview": "button",
+    "cssClass": "btn-hex"
+  },
+  {
+    "id": 96,
+    "name": "Minimal Trapezoid",
+    "description": "Clean trapezoid shape for dynamic appearance.",
+    "difficulty": "intermediate",
+    "tags": ["trapezoid", "minimal", "dynamic", "geometric"],
+    "preview": "button",
+    "cssClass": "btn-trapezoid"
+  },
+  {
+    "id": 97,
+    "name": "Soft Diamond Button",
+    "description": "Diamond shape with soft, rounded points.",
+    "difficulty": "advanced",
+    "tags": ["diamond", "soft", "geometric", "unique"],
+    "preview": "button",
+    "cssClass": "btn-diamond"
+  },
+  {
+    "id": 98,
+    "name": "Organic Blob Capsule",
+    "description": "Irregular, organic blob-like capsule shape.",
+    "difficulty": "advanced",
+    "tags": ["organic", "blob", "irregular", "unique"],
+    "preview": "button",
+    "cssClass": "btn-blob-capsule"
+  },
+  {
+    "id": 99,
+    "name": "Dual Shape Hybrid Button",
+    "description": "Combination of two distinct shapes merged.",
+    "difficulty": "advanced",
+    "tags": ["dual-shape", "hybrid", "merged", "unique"],
+    "preview": "button",
+    "cssClass": "btn-dual-shape"
+  },
+  {
+    "id": 100,
+    "name": "Center Cut Frame Capsule",
+    "description": "Capsule frame with center portion cut out.",
+    "difficulty": "advanced",
+    "tags": ["center-cut", "frame", "capsule", "hollow"],
+    "preview": "button",
+    "cssClass": "btn-center-cut"
+  },
+  {
+    "id": 101,
+    "name": "Liquid Glass Premium Button",
+    "description": "Premium liquid glass effect with fluid distortion.",
+    "difficulty": "advanced",
+    "tags": ["liquid", "glass", "premium", "fluid", "luxury"],
+    "preview": "button",
+    "cssClass": "btn-liquid-glass"
+  },
+  {
+    "id": 102,
+    "name": "Frosted Luxury Capsule",
+    "description": "Ultra-luxury frosted glass with subtle sheen.",
+    "difficulty": "intermediate",
+    "tags": ["frosted", "luxury", "premium", "capsule"],
+    "preview": "button",
+    "cssClass": "btn-frost-luxury"
+  },
+  {
+    "id": 103,
+    "name": "Cinematic Depth Layer Button",
+    "description": "Movie-poster style depth with multiple atmospheric layers.",
+    "difficulty": "advanced",
+    "tags": ["cinematic", "depth", "layered", "atmospheric"],
+    "preview": "button",
+    "cssClass": "btn-cinematic"
+  },
+  {
+    "id": 104,
+    "name": "Shadowless Ultra Minimal",
+    "description": "Pure minimalism with no shadows, just flat color.",
+    "difficulty": "beginner",
+    "tags": ["shadowless", "ultra-minimal", "flat", "pure"],
+    "preview": "button",
+    "cssClass": "btn-shadowless"
+  },
+  {
+    "id": 105,
+    "name": "Bold Brutalist Slab",
+    "description": "Heavy, bold brutalist slab with raw presence.",
+    "difficulty": "beginner",
+    "tags": ["brutalist", "bold", "slab", "raw"],
+    "preview": "button",
+    "cssClass": "btn-brutalist-slab"
+  },
+  {
+    "id": 106,
+    "name": "High-Fashion Editorial Button",
+    "description": "Vogue-worthy button with fashion aesthetic.",
+    "difficulty": "intermediate",
+    "tags": ["fashion", "editorial", "high-end", "stylish"],
+    "preview": "button",
+    "cssClass": "btn-fashion"
+  },
+  {
+    "id": 107,
+    "name": "Glass Edge Frame Luxury",
+    "description": "Luxury glass treatment concentrated on edges.",
+    "difficulty": "intermediate",
+    "tags": ["glass-edge", "luxury", "frame", "premium"],
+    "preview": "button",
+    "cssClass": "btn-luxury-edge"
+  },
+  {
+    "id": 108,
+    "name": "Ultra-Soft Floating Capsule",
+    "description": "Extremely soft appearance with floating effect.",
+    "difficulty": "beginner",
+    "tags": ["ultra-soft", "floating", "capsule", "gentle"],
+    "preview": "button",
+    "cssClass": "btn-ultra-soft"
+  },
+  {
+    "id": 109,
+    "name": "Deep Matte + Subtle Glow",
+    "description": "Rich deep matte finish with barely-there glow.",
+    "difficulty": "beginner",
+    "tags": ["deep-matte", "subtle-glow", "sophisticated"],
+    "preview": "button",
+    "cssClass": "btn-matte-glow"
+  },
+  {
+    "id": 110,
+    "name": "Hyper Clean Silicon UI Button",
+    "description": "Ultra-clean silicon-inspired UI design.",
+    "difficulty": "intermediate",
+    "tags": ["silicon", "clean", "ui", "modern"],
+    "preview": "button",
+    "cssClass": "btn-silicon"
+  },
+  {
+    "id": 111,
+    "name": "Apple-Inspired Frost Capsule",
+    "description": "Clean, Apple-design-language inspired frosted capsule.",
+    "difficulty": "intermediate",
+    "tags": ["apple", "inspired", "frost", "clean", "premium"],
+    "preview": "button",
+    "cssClass": "btn-apple-frost"
+  },
+  {
+    "id": 112,
+    "name": "Tesla-Style Industrial Minimal",
+    "description": "Industrial minimalism inspired by Tesla design.",
+    "difficulty": "intermediate",
+    "tags": ["tesla", "industrial", "minimal", "futuristic"],
+    "preview": "button",
+    "cssClass": "btn-tesla"
+  },
+  {
+    "id": 113,
+    "name": "Cyberpunk Neon Frame",
+    "description": "Bold cyberpunk aesthetic with neon frame.",
+    "difficulty": "intermediate",
+    "tags": ["cyberpunk", "neon", "frame", "futuristic"],
+    "preview": "button",
+    "cssClass": "btn-cyber-frame"
+  },
+  {
+    "id": 114,
+    "name": "Dark Mode Elevated Luxury",
+    "description": "Dark mode optimized with premium elevation.",
+    "difficulty": "beginner",
+    "tags": ["dark-mode", "elevated", "luxury", "premium"],
+    "preview": "button",
+    "cssClass": "btn-dark-luxury"
+  },
+  {
+    "id": 115,
+    "name": "Fintech Polished Capsule",
+    "description": "Polished, trustworthy design for fintech apps.",
+    "difficulty": "intermediate",
+    "tags": ["fintech", "polished", "trustworthy", "professional"],
+    "preview": "button",
+    "cssClass": "btn-fintech"
+  },
+  {
+    "id": 116,
+    "name": "Startup Hero CTA Premium",
+    "description": "High-impact CTA design for startup hero sections.",
+    "difficulty": "intermediate",
+    "tags": ["startup", "cta", "hero", "premium", "conversion"],
+    "preview": "button",
+    "cssClass": "btn-startup-cta"
+  },
+  {
+    "id": 117,
+    "name": "Premium SaaS Primary Button",
+    "description": "Primary button design for premium SaaS products.",
+    "difficulty": "intermediate",
+    "tags": ["saas", "premium", "primary", "software"],
+    "preview": "button",
+    "cssClass": "btn-saas"
+  },
+  {
+    "id": 118,
+    "name": "Ultra Modern Glass CTA",
+    "description": "Cutting-edge glass design for modern CTAs.",
+    "difficulty": "advanced",
+    "tags": ["ultra-modern", "glass", "cta", "contemporary"],
+    "preview": "button",
+    "cssClass": "btn-modern-glass"
+  },
+  {
+    "id": 119,
+    "name": "Designer Portfolio Signature Button",
+    "description": "Signature button style for designer portfolios.",
+    "difficulty": "intermediate",
+    "tags": ["designer", "portfolio", "signature", "creative"],
+    "preview": "button",
+    "cssClass": "btn-portfolio"
+  },
+  {
+    "id": 120,
+    "name": "Flagship Showcase Button",
+    "description": "Flagship button design for premium showcases.",
+    "difficulty": "advanced",
+    "tags": ["flagship", "showcase", "premium", "hero"],
+    "preview": "button",
+    "cssClass": "btn-flagship"
+  }
+]

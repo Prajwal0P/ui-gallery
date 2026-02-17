@@ -1,0 +1,409 @@
+[
+    {
+      "id": "glass-001",
+      "name": "Frosted Glass Primary",
+      "description": "Primary glassmorphism effect with frosted blur and subtle border",
+      "tags": ["glass", "frosted", "primary", "blur", "modern"],
+      "interactionType": "card-hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "blurStrength": "medium",
+          "borderType": "subtle",
+          "frostIntensity": "high"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(12px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.1)",
+        "border": "1px solid rgba(255, 255, 255, 0.2)",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.1)"
+      }
+    },
+    {
+      "id": "glass-002",
+      "name": "Blurred Edge with Border",
+      "description": "Glass effect with blurred edges and defined border gradient",
+      "tags": ["glass", "blur", "border", "gradient", "edge"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "blurStrength": "strong",
+          "borderType": "gradient"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(16px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.08)",
+        "border": "1px solid transparent",
+        "borderImage": "linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)) 1",
+        "boxShadow": "0 4px 24px rgba(0, 0, 0, 0.15)"
+      }
+    },
+    {
+      "id": "glass-003",
+      "name": "Multi-Layer Glass Effect",
+      "description": "Multiple glass layers with depth and shadow stacking",
+      "tags": ["glass", "layered", "depth", "3d", "stack"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "layers": 3,
+          "depth": "medium"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(10px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "boxShadow": "0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+      }
+    },
+    {
+      "id": "glass-004",
+      "name": "Glass with Floating Particles",
+      "description": "Glass surface with animated floating particle effects",
+      "tags": ["glass", "particles", "animated", "floating", "dynamic"],
+      "interactionType": "animated",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "particles": true,
+          "animation": "float"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(8px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.07)",
+        "border": "1px solid rgba(255, 255, 255, 0.15)",
+        "position": "relative",
+        "overflow": "hidden"
+      }
+    },
+    {
+      "id": "glass-005",
+      "name": "Animated Glass Refraction",
+      "description": "Glass that refracts light with animated movement",
+      "tags": ["glass", "refraction", "animated", "light", "optical"],
+      "interactionType": "animated",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "refraction": true,
+          "animation": "refraction"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(20px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "backgroundImage": "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%)"
+      }
+    },
+    {
+      "id": "glass-006",
+      "name": "Gradient Glass Overlay",
+      "description": "Glass overlay with gradient transparency",
+      "tags": ["glass", "gradient", "overlay", "transparency", "color"],
+      "interactionType": "card-hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "gradient": "diagonal",
+          "colors": ["accent", "transparent"]
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(15px)",
+        "background": "linear-gradient(135deg, rgba(255, 55, 95, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)",
+        "border": "1px solid rgba(255, 255, 255, 0.15)"
+      }
+    },
+    {
+      "id": "glass-007",
+      "name": "Glass with Micro-Texture",
+      "description": "Glass surface with subtle micro-texture pattern",
+      "tags": ["glass", "texture", "micro", "pattern", "detailed"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "texture": "micro",
+          "pattern": "subtle"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(12px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.06)",
+        "backgroundImage": "radial-gradient(circle at 10% 20%, rgba(255,255,255,0.02) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(255,255,255,0.02) 0%, transparent 20%)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)"
+      }
+    },
+    {
+      "id": "glass-008",
+      "name": "Frosted Glass Icon Button",
+      "description": "Icon button with frosted glass effect and hover states",
+      "tags": ["glass", "button", "icon", "frosted", "interactive"],
+      "interactionType": "button",
+      "previewConfig": {
+        "type": "glass-button",
+        "props": {
+          "icon": "star",
+          "size": "medium"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(10px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.1)",
+        "border": "1px solid rgba(255, 255, 255, 0.2)",
+        "borderRadius": "12px",
+        "padding": "12px"
+      }
+    },
+    {
+      "id": "glass-009",
+      "name": "Glass Morphing on Hover",
+      "description": "Glass element that morphs shape on hover interaction",
+      "tags": ["glass", "morph", "animated", "hover", "transform"],
+      "interactionType": "morph",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "morphEffect": true,
+          "animation": "morph"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(15px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.08)",
+        "border": "1px solid rgba(255, 255, 255, 0.15)",
+        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    },
+    {
+      "id": "glass-010",
+      "name": "Glass with Light Streaks",
+      "description": "Glass surface with animated light streak reflections",
+      "tags": ["glass", "light", "streaks", "animated", "reflection"],
+      "interactionType": "animated",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "lightStreaks": true,
+          "animation": "streaks"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(20px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "position": "relative",
+        "overflow": "hidden",
+        "border": "1px solid rgba(255, 255, 255, 0.1)"
+      }
+    },
+    {
+      "id": "glass-011",
+      "name": "Smoked Glass Dark Theme",
+      "description": "Dark smoked glass effect for dark theme interfaces",
+      "tags": ["glass", "smoked", "dark", "theme", "moody"],
+      "interactionType": "card-hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "theme": "dark",
+          "intensity": "smoked"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(18px)",
+        "backgroundColor": "rgba(0, 0, 0, 0.25)",
+        "border": "1px solid rgba(255, 255, 255, 0.08)",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.3)"
+      }
+    },
+    {
+      "id": "glass-012",
+      "name": "Crystal Clear Glass",
+      "description": "Ultra-clear glass effect with minimal coloration",
+      "tags": ["glass", "clear", "crystal", "minimal", "pure"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "clarity": "high",
+          "color": "minimal"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(25px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.03)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "boxShadow": "0 4px 20px rgba(0, 0, 0, 0.1)"
+      }
+    },
+    {
+      "id": "glass-013",
+      "name": "Warped Glass Distortion",
+      "description": "Glass effect with subtle warping distortion",
+      "tags": ["glass", "warped", "distortion", "liquid", "effect"],
+      "interactionType": "animated",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "distortion": true,
+          "intensity": "subtle"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(15px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.07)",
+        "border": "1px solid rgba(255, 255, 255, 0.15)",
+        "transform": "perspective(1000px) rotateX(2deg) rotateY(-1deg)"
+      }
+    },
+    {
+      "id": "glass-014",
+      "name": "Glass with Water Droplets",
+      "description": "Glass surface with simulated water droplets",
+      "tags": ["glass", "water", "droplets", "realistic", "nature"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "waterEffect": true,
+          "droplets": "animated"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(12px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.09)",
+        "border": "1px solid rgba(255, 255, 255, 0.2)",
+        "position": "relative",
+        "overflow": "hidden"
+      }
+    },
+    {
+      "id": "glass-015",
+      "name": "Iridescent Glass Effect",
+      "description": "Glass with shifting iridescent color effects",
+      "tags": ["glass", "iridescent", "color-shift", "rainbow", "prism"],
+      "interactionType": "animated",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "iridescent": true,
+          "colorShift": "animated"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(20px)",
+        "background": "linear-gradient(45deg, rgba(255, 55, 95, 0.1), rgba(0, 212, 255, 0.1), rgba(157, 78, 221, 0.1))",
+        "border": "1px solid rgba(255, 255, 255, 0.15)",
+        "animation": "iridescentShift 8s ease infinite"
+      }
+    },
+    {
+      "id": "glass-016",
+      "name": "Glass with Grid Pattern",
+      "description": "Glass overlay with subtle grid pattern texture",
+      "tags": ["glass", "grid", "pattern", "geometric", "structure"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "grid": true,
+          "pattern": "geometric"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(10px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.06)",
+        "backgroundImage": "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+        "backgroundSize": "20px 20px",
+        "border": "1px solid rgba(255, 255, 255, 0.1)"
+      }
+    },
+    {
+      "id": "glass-017",
+      "name": "Animated Glass Cracking",
+      "description": "Glass effect with animated cracking pattern on interaction",
+      "tags": ["glass", "cracking", "animated", "break", "interactive"],
+      "interactionType": "interactive",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "crackEffect": true,
+          "trigger": "click"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(15px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.08)",
+        "border": "1px solid rgba(255, 255, 255, 0.2)",
+        "position": "relative",
+        "overflow": "hidden"
+      }
+    },
+    {
+      "id": "glass-018",
+      "name": "Glass with Chromatic Aberration",
+      "description": "Glass effect with subtle chromatic aberration on edges",
+      "tags": ["glass", "chromatic", "aberration", "rgb", "edge"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "chromatic": true,
+          "intensity": "subtle"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(12px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.07)",
+        "border": "1px solid rgba(255, 255, 255, 0.15)",
+        "boxShadow": "0 0 20px rgba(255, 0, 0, 0.1), 0 0 40px rgba(0, 255, 0, 0.1), 0 0 60px rgba(0, 0, 255, 0.1)"
+      }
+    },
+    {
+      "id": "glass-019",
+      "name": "Frosted Glass Neon Edges",
+      "description": "Frosted glass with neon edge glow effects",
+      "tags": ["glass", "neon", "glow", "frosted", "edge"],
+      "interactionType": "hover",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "neonEdges": true,
+          "color": "cyan"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(16px)",
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "border": "1px solid rgba(0, 212, 255, 0.3)",
+        "boxShadow": "0 0 20px rgba(0, 212, 255, 0.2), inset 0 0 20px rgba(0, 212, 255, 0.1)"
+      }
+    },
+    {
+      "id": "glass-020",
+      "name": "Liquid Glass Flow Effect",
+      "description": "Glass effect that flows like liquid on interaction",
+      "tags": ["glass", "liquid", "flow", "animated", "fluid"],
+      "interactionType": "morph",
+      "previewConfig": {
+        "type": "glass-card",
+        "props": {
+          "liquidEffect": true,
+          "flowDirection": "horizontal"
+        }
+      },
+      "cssProperties": {
+        "backdropFilter": "blur(18px)",
+        "background": "linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)",
+        "backgroundSize": "200% 100%",
+        "border": "1px solid rgba(255, 255, 255, 0.15)",
+        "animation": "liquidFlow 4s ease-in-out infinite"
+      }
+    }
+  ]

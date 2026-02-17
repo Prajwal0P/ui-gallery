@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Index | Experimental UI Pattern Reference</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom animations that are easier to keep as CSS */
+        @keyframes gridMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-30px, -30px) rotate(0.1deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+            50% { transform: translate(20px, -20px) scale(1.2); opacity: 1; }
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-grid-move {
+            animation: gridMove 20s linear infinite;
+        }
+        
+        .animate-float {
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        .animate-gradient-shift {
+            animation: gradientShift 8s ease infinite;
+            background-size: 200% 100%;
+        }
+        
+        .animate-pulse-custom {
+            animation: pulse 2s infinite;
+        }
+        
+        .animate-spin-custom {
+            animation: spin 1s linear infinite;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.2s ease;
+        }
+        
+        .bg-grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #FF375F, #9D4EDD);
+        }
+        
+        .text-gradient-primary {
+            background: linear-gradient(90deg, #FFFFFF, #FF375F, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .shadow-glow-accent {
+            box-shadow: 0 0 30px rgba(255, 55, 95, 0.4);
+        }
+        
+        .shadow-glow-secondary {
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .transition-transform-gpu {
+            transition: transform 0.3s ease;
+        }
+        
+        .search-results.active {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+        
+        .demo-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            pointer-events: none;
+        }
+        
+        .demo-button:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #FF375F, #00D4FF);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-tagline::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: #00D4FF;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-[#F0F0F0] font-normal overflow-x-hidden">
+    <!-- Background Effects -->
+    <div class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+        <div class="absolute w-[200%] h-[200%] bg-grid-pattern animate-grid-move origin-center"></div>
+        <div class="absolute w-1 h-1 bg-[#FF375F] rounded-full blur-sm shadow-[0_0_20px_#FF375F] animate-float" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="absolute w-1 h-1 bg-[#FF375F] rounded-full blur-sm shadow-[0_0_20px_#FF375F] animate-float" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
+        <div class="absolute w-1 h-1 bg-[#FF375F] rounded-full blur-sm shadow-[0_0_20px_#FF375F] animate-float" style="bottom: 30%; left: 20%; animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="fixed bottom-[30px] right-[30px] bg-[#10b981] text-white px-6 py-4 rounded-lg shadow-[0_10px_30px_rgba(0,0,0,0.3)] flex items-center gap-3 translate-y-[100px] opacity-0 transition-all duration-300 z-[1000]" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full py-[30px] z-[100] bg-black/80 backdrop-blur-md border-b border-white/8">
+        <div class="container max-w-[1400px] mx-auto px-[40px] max-md:px-[25px]">
+            <div class="flex justify-between items-center max-md:flex-col max-md:gap-[25px]">
+                <a href="index.html" class="flex items-center gap-3 no-underline">
+                    <div class="w-8 h-8 bg-gradient-custom rounded-md flex items-center justify-center font-black text-lg text-white">II</div>
+                    <div class="text-[22px] font-extrabold tracking-[-0.5px] bg-gradient-to-r from-white to-[#aaa] bg-clip-text text-transparent">Interface Index</div>
+                </a>
+                <ul class="flex gap-10 list-none max-md:gap-[25px]">
+                    <li><a href="#component-quick-links" class="nav-link relative text-[#F0F0F0] font-medium text-[15px] py-2 transition-colors duration-300 hover:text-white no-underline">All Components</a></li>
+                    <li><a href="#previews" class="nav-link relative text-[#F0F0F0] font-medium text-[15px] py-2 transition-colors duration-300 hover:text-white no-underline">Previews</a></li>
+                    <li><a href="docs/methodology.html" class="nav-link relative text-[#F0F0F0] font-medium text-[15px] py-2 transition-colors duration-300 hover:text-white no-underline">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center py-[120px_0_80px] relative overflow-hidden">
+        <div class="container max-w-[1400px] mx-auto px-[40px] max-md:px-[25px] relative z-10">
+            <div class="max-w-[900px] relative">
+                <div class="hero-tagline flex items-center gap-[15px] text-[#00D4FF] text-sm font-medium uppercase tracking-[3px] mb-[30px] before:inline-block">
+                    Interaction-First Reference
+                </div>
+                <h1 class="text-[5.5rem] max-lg:text-[4rem] max-md:text-[3rem] max-sm:text-[2.5rem] font-extrabold leading-[1] mb-[30px] tracking-[-2px]">
+                    <span class="text-gradient-primary animate-gradient-shift">Interface Index</span>
+                </h1>
+                <p class="text-[1.3rem] max-md:text-[1.1rem] text-white/70 max-w-[600px] mb-[50px] font-light">
+                    A structured reference of UI interaction patterns for serious implementation.
+                    Experimental, precise, and built for professional execution.
+                </p>
+                <div id="hero-stat" class="inline-block bg-white/5 border border-white/8 py-3 px-6 rounded-[50px] text-sm font-medium mb-[60px] backdrop-blur-md">
+                    <span class="inline-block w-5 h-5 border-2 border-white/8 border-t-[#FF375F] rounded-full animate-spin-custom mr-2 align-middle"></span> Loading pattern data...
+                </div>
+
+                <div class="search-container max-w-[700px] relative mt-[60px]">
+                    <i class="fas fa-search absolute left-[30px] top-1/2 -translate-y-1/2 text-[#FF375F] text-xl pointer-events-none max-sm:left-5"></i>
+                    <input type="text" class="w-full py-6 px-[30px] pl-[70px] bg-white/3 border border-white/8 rounded-2xl text-lg text-white transition-all duration-300 focus:outline-none focus:border-[#FF375F] focus:shadow-glow-accent focus:bg-white/5 max-sm:py-5 max-sm:pl-[50px] max-sm:text-base" placeholder="Search for hover states, loading patterns, form validation, navigation flows..." id="global-search" autocomplete="off">
+                    <div class="search-hint absolute right-[30px] top-1/2 -translate-y-1/2 text-white/30 text-sm flex items-center gap-2 max-sm:hidden">
+                        <span>Press</span>
+                        <kbd class="bg-white/10 py-1 px-2 rounded">⌘K</kbd>
+                    </div>
+
+                    <!-- Search Results Dropdown -->
+                    <div class="search-results absolute top-[calc(100%+10px)] left-0 w-full bg-[#0A0A0A]/95 border border-white/8 rounded-xl backdrop-blur-xl max-h-[400px] overflow-y-auto hidden z-[1000] shadow-[0_20px_40px_rgba(0,0,0,0.5)]" id="search-results">
+                        <div class="no-results py-8 px-8 text-center text-white/40 hidden" id="no-results">
+                            <i class="fas fa-search text-3xl mb-4 text-[#FF375F]"></i>
+                            <p>No patterns found</p>
+                            <p class="text-xs mt-2">Try different keywords or browse categories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Previews -->
+    <section class="py-[120px] border-t border-white/8 border-b border-white/8" id="previews">
+        <div class="container max-w-[1400px] mx-auto px-[40px] max-md:px-[25px]">
+            <div class="section-header">
+                <div>
+                    <h2 class="text-[3rem] max-md:text-[2.5rem] font-bold">Interactive Previews</h2>
+                    <p class="text-white/70 text-lg">Selected patterns demonstrating interaction mechanics</p>
+                </div>
+            </div>
+
+            <div id="previews-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-sm:grid-cols-1">
+                <!-- Previews will be loaded dynamically from JSON -->
+                <div class="preview-item opacity-70 pointer-events-none">
+                    <div class="preview-header mb-6">
+                        <div class="preview-category text-[#FF375F] text-xs font-semibold uppercase tracking-[2px] mb-2.5">Loading...</div>
+                        <h3 class="preview-title text-white text-2xl font-bold">Loading preview data</h3>
+                    </div>
+                    <div class="preview-demo h-[300px] bg-white/2 border border-white/8 rounded-2xl flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                        <span class="inline-block w-5 h-5 border-2 border-white/8 border-t-[#FF375F] rounded-full animate-spin-custom"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Component Quick Links -->
+    <section class="py-[120px] bg-black/30 relative overflow-hidden border-t border-white/8" id="component-quick-links">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_50%,rgba(255,55,95,0.05)_0%,transparent_50%),radial-gradient(circle_at_80%_20%,rgba(0,212,255,0.05)_0%,transparent_50%)] pointer-events-none"></div>
+        <div class="container max-w-[1400px] mx-auto px-[40px] max-md:px-[25px] relative z-10">
+            <div class="section-header">
+                <div>
+                    <h2 class="text-[3rem] max-md:text-[2.5rem] font-bold">1410 UI Components</h2>
+                    <p class="text-white/70 text-lg">Quick links to browse all component categories</p>
+                    <div class="showcase-stats flex flex-wrap gap-8 mt-6">
+                        <div class="stat-item">
+                            <div class="stat-number text-2xl font-bold text-[#FF375F]">1,410</div>
+                            <span class="text-white/60">Total Components</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number text-2xl font-bold text-[#FF375F]">9</div>
+                            <span class="text-white/60">Main Categories</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number text-2xl font-bold text-[#FF375F]">64</div>
+                            <span class="text-white/60">Subcategories</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number text-2xl font-bold text-[#FF375F]">150</div>
+                            <span class="text-white/60">Button Designs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-[50px] max-sm:grid-cols-1 max-sm:gap-5" id="quick-links-grid">
+                <!-- Buttons -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="buttons">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-mouse-pointer"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">150 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Buttons</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Glassmorphism (20 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Neumorphism (20 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">3D/Isometric (15 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Gradient Mesh (15 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Liquid/Organic (15 designs)</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Cyberpunk/Neon (15 designs)</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-buttons">
+                            <i class="fas fa-eye"></i>
+                            View All Buttons
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-buttons">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hover Effects -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="hover">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">250 effects</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Hover Effects</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Card Hovers (40 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Image Hovers (40 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Text Effects (40 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Button Hovers (40 designs)</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Icon Hovers (40 designs)</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Background Hovers (50 designs)</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-hover">
+                            <i class="fas fa-eye"></i>
+                            View All Hover Effects
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-hover">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="cards">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">180 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Cards</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Profile Cards</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Product Cards</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Blog Cards</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Dashboard Cards</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Interactive Cards</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Animated Cards</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-cards">
+                            <i class="fas fa-eye"></i>
+                            View All Cards
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-cards">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Forms & Inputs -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="forms">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">200 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Forms & Inputs</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Input Fields</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Checkboxes & Radios</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Select Menus</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Form Validation</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Multi-step Forms</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Search Forms</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-forms">
+                            <i class="fas fa-eye"></i>
+                            View All Forms
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-forms">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="navigation">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">140 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Navigation</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Navbars</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Sidebars</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Dropdowns</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Breadcrumbs</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Pagination</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Tabs</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-navigation">
+                            <i class="fas fa-eye"></i>
+                            View All Navigation
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-navigation">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modals & Overlays -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="modals">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-window-maximize"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">120 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Modals & Overlays</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Dialog Modals</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Lightbox</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Notifications</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Tooltips</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Popovers</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Fullscreen Overlays</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-modals">
+                            <i class="fas fa-eye"></i>
+                            View All Modals
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-modals">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback & Status -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="feedback">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">100 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Feedback & Status</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Loading States</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Progress Bars</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Success/Error States</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Toast Notifications</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Empty States</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Skeleton Screens</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-feedback">
+                            <i class="fas fa-eye"></i>
+                            View All Feedback
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-feedback">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tables & Data -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="tables">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">90 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Tables & Data</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Data Tables</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Charts</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Data Grids</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Sortable Tables</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Filterable Tables</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Data Visualization</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-tables">
+                            <i class="fas fa-eye"></i>
+                            View All Tables
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-tables">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Layout & Structure -->
+                <div class="quick-link-category bg-white/2 border border-white/8 rounded-2xl p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] cursor-pointer relative overflow-hidden max-sm:p-5" data-category="layout">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#FF375F]/5 to-[#00D4FF]/5 opacity-0 transition-opacity duration-300 hover:opacity-100"></div>
+                    <div class="category-header flex items-center justify-between mb-5 relative z-10">
+                        <div class="category-icon-wrapper w-[50px] h-[50px] bg-white/5 rounded-xl flex items-center justify-center text-xl text-[#FF375F]">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="category-count-badge bg-[#FF375F]/10 text-[#FF375F] py-1 px-3 rounded-full text-xs font-semibold">80 designs</div>
+                    </div>
+                    <h3 class="category-title text-white text-2xl font-bold mb-4 relative z-10">Layout & Structure</h3>
+                    <ul class="subcategory-list list-none mb-5 relative z-10">
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Grid Systems</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Flexbox Layouts</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Masonry Grids</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Split Screens</li>
+                        <li class="subcategory-item py-2 border-b border-white/5 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Sticky Elements</li>
+                        <li class="subcategory-item py-2 text-white/60 text-sm flex items-center gap-2.5 before:content-[''] before:w-1 before:h-1 before:bg-[#00D4FF] before:rounded-full">Responsive Layouts</li>
+                    </ul>
+                    <div class="category-actions flex gap-2.5 mt-5 relative z-10 max-sm:flex-col">
+                        <button class="category-btn primary flex-1 py-2.5 px-4 bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border border-[#FF375F] rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:from-[#FF6B9D] hover:to-[#FF375F] hover:shadow-[0_10px_20px_rgba(255,55,95,0.2)] hover:text-white flex items-center justify-center gap-2" data-action="view-layout">
+                            <i class="fas fa-eye"></i>
+                            View All Layouts
+                        </button>
+                        <button class="category-btn flex-1 py-2.5 px-4 bg-white/5 border border-white/8 rounded-lg text-white/70 text-sm font-semibold cursor-pointer transition-all duration-300 hover:bg-white/8 hover:border-[#FF375F] hover:text-white flex items-center justify-center gap-2" data-action="search-layout">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container max-w-[1400px] mx-auto px-[40px] max-md:px-[25px]">
+            <div class="footer-content py-8 border-t border-white/8">
+                <p class="footer-text text-white/60 mb-2">
+                    Interface Index is a structured, interaction-focused reference of UI patterns.
+                    Designed for professional implementation, not decorative showcase.
+                </p>
+                <p class="footer-meta text-white/40 text-sm">
+                    <!-- Fixed: Added pattern-count element and version-info element -->
+                    <span id="version-info">Version 3.0</span> • <span id="pattern-count">1,410 components</span> • 
+                    Continuously updated
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        class InterfaceIndex {
+            constructor() {
+                this.categories = [];
+                this.allPatterns = [];
+                this.totalPatterns = 0;
+                this.searchIndex = null;
+
+                // DOM Elements
+                this.previewsContainer = document.getElementById('previews-container');
+                this.heroStat = document.getElementById('hero-stat');
+                this.patternCountElement = document.getElementById('pattern-count');
+                this.versionInfo = document.getElementById('version-info');
+                this.searchInput = document.getElementById('global-search');
+                this.searchResults = document.getElementById('search-results');
+                this.noResults = document.getElementById('no-results');
+                this.toast = document.getElementById('toast');
+                this.toastMessage = document.getElementById('toast-message');
+
+                // Quick links elements
+                this.quickLinksGrid = document.getElementById('quick-links-grid');
+
+                // Search state
+                this.searchTimeout = null;
+                this.lastSearchQuery = '';
+                this.isSearching = false;
+
+                this.init();
+            }
+
+            async init() {
+                try {
+                    // Load patterns for search
+                    await this.loadAllPatterns();
+
+                    // Initialize search
+                    this.setupSearch();
+
+                    // Load preview patterns
+                    await this.loadPreviewPatterns();
+
+                    // Setup interactions
+                    this.setupInteractions();
+
+                    // Setup quick links interactions
+                    this.setupQuickLinks();
+
+                    // Start typewriter effect
+                    this.startTypewriterEffect();
+
+                    // Update UI stats
+                    this.updateStats();
+
+                    // Remove loading states
+                    this.removeLoadingStates();
+
+                } catch (error) {
+                    console.error('Failed to initialize:', error);
+                    this.showErrorState();
+                }
+            }
+
+            async loadAllPatterns() {
+                try {
+                    this.allPatterns = [];
+                    this.totalPatterns = 1410; // Total from your component list
+
+                    // Update UI
+                    if (this.heroStat) {
+                        this.heroStat.innerHTML = `<strong>${this.totalPatterns.toLocaleString()}+</strong> documented UI components across 9 categories`;
+                    }
+                    if (this.patternCountElement) {
+                        this.patternCountElement.textContent = `${this.totalPatterns.toLocaleString()} components`;
+                    }
+                    if (this.versionInfo) {
+                        this.versionInfo.textContent = `Version 3.0 • ${this.totalPatterns.toLocaleString()} components`;
+                    }
+
+                } catch (error) {
+                    console.error('Failed to load patterns:', error);
+                }
+            }
+
+            updateStats() {
+                if (this.heroStat) {
+                    this.heroStat.innerHTML = `<strong>1,410</strong> documented UI components across 9 categories`;
+                }
+                if (this.patternCountElement) {
+                    this.patternCountElement.textContent = `1,410 components`;
+                }
+                if (this.versionInfo) {
+                    this.versionInfo.textContent = `Version 3.0 • 1,410 components`;
+                }
+            }
+
+            setupQuickLinks() {
+                if (!this.quickLinksGrid) return;
+                
+                // Add click events to quick link cards
+                this.quickLinksGrid.querySelectorAll('.quick-link-category').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        if (!e.target.closest('.category-btn')) {
+                            const category = card.dataset.category;
+                            this.navigateToCategoryPage(category);
+                        }
+                    });
+                });
+
+                // Add click events to buttons
+                this.quickLinksGrid.querySelectorAll('.category-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const action = e.currentTarget.dataset.action;
+                        const categoryCard = e.currentTarget.closest('.quick-link-category');
+                        const category = categoryCard.dataset.category;
+
+                        this.handleQuickLinkAction(action, category);
+                    });
+                });
+            }
+
+            handleQuickLinkAction(action, category) {
+                switch (action) {
+                    case 'view-buttons':
+                    case 'view-hover':
+                    case 'view-cards':
+                    case 'view-forms':
+                    case 'view-navigation':
+                    case 'view-modals':
+                    case 'view-feedback':
+                    case 'view-tables':
+                    case 'view-layout':
+                        this.navigateToCategoryPage(category);
+                        break;
+
+                    case 'search-buttons':
+                    case 'search-hover':
+                    case 'search-cards':
+                    case 'search-forms':
+                    case 'search-navigation':
+                    case 'search-modals':
+                    case 'search-feedback':
+                    case 'search-tables':
+                    case 'search-layout':
+                        this.searchForCategory(category);
+                        break;
+                }
+            }
+
+            navigateToCategoryPage(category) {
+                window.location.href = `${category}.html`;
+            }
+
+            searchForCategory(category) {
+                // Set search input with category name and trigger search
+                const categoryNames = {
+                    'buttons': 'buttons glassmorphism neumorphism',
+                    'hover': 'hover effects animation',
+                    'cards': 'cards layout profile product',
+                    'forms': 'forms inputs validation',
+                    'navigation': 'navigation menu navbar',
+                    'modals': 'modals overlays popups',
+                    'feedback': 'feedback loading progress',
+                    'tables': 'tables data grid',
+                    'layout': 'layout grid structure'
+                };
+
+                if (this.searchInput) {
+                    this.searchInput.value = categoryNames[category] || category;
+                    this.searchInput.focus();
+                    this.performSearch(this.searchInput.value);
+                }
+            }
+
+            /* ========== EXISTING METHODS ========== */
+
+            buildSearchIndex() {
+                this.searchIndex = this.allPatterns.map(pattern => ({
+                    id: pattern.id,
+                    name: pattern.name.toLowerCase(),
+                    description: (pattern.description || '').toLowerCase(),
+                    tags: (pattern.tags || []).join(' ').toLowerCase(),
+                    category: pattern.categoryId,
+                    categoryName: pattern.categoryName,
+                    data: pattern
+                }));
+            }
+
+            async loadPreviewPatterns() {
+                try {
+                    if (!this.previewsContainer) return;
+                    
+                    // Clear existing previews
+                    this.previewsContainer.innerHTML = '';
+
+                    // Create previews for main categories
+                    const previewCategories = [
+                        { id: 'buttons', name: 'Buttons', icon: 'fas fa-mouse-pointer' },
+                        { id: 'hover', name: 'Hover Effects', icon: 'fas fa-hand-pointer' },
+                        { id: 'cards', name: 'Cards', icon: 'fas fa-id-card' }
+                    ];
+
+                    previewCategories.forEach(category => {
+                        this.renderPreviewForCategory(category);
+                    });
+
+                } catch (error) {
+                    console.error('Failed to load preview patterns:', error);
+                }
+            }
+
+            renderPreviewForCategory(category) {
+                if (!this.previewsContainer) return;
+                
+                const previewItem = document.createElement('div');
+                previewItem.className = 'preview-item';
+                previewItem.setAttribute('data-category-id', category.id);
+
+                previewItem.innerHTML = `
+                    <div class="preview-header mb-6">
+                        <div class="preview-category text-[#FF375F] text-xs font-semibold uppercase tracking-[2px] mb-2.5">${category.name}</div>
+                        <h3 class="preview-title text-white text-2xl font-bold">${this.getPreviewTitle(category.id)}</h3>
+                    </div>
+                    <div class="preview-demo h-[300px] bg-white/2 border border-white/8 rounded-2xl flex items-center justify-center relative overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                        ${this.createDemoPreviewByCategory(category.id)}
+                    </div>
+                `;
+
+                // Add click event to navigate to category
+                previewItem.addEventListener('click', () => {
+                    this.navigateToCategoryPage(category.id);
+                });
+
+                this.previewsContainer.appendChild(previewItem);
+
+                // Setup demo interactions
+                this.setupDemoInteraction(previewItem, category);
+            }
+
+            getPreviewTitle(categoryId) {
+                const titles = {
+                    'buttons': 'Glassmorphism Button',
+                    'hover': 'Card Hover Effect',
+                    'cards': 'Interactive Profile Card'
+                };
+                return titles[categoryId] || `${categoryId} Preview`;
+            }
+
+            createDemoPreviewByCategory(categoryId) {
+                switch (categoryId) {
+                    case 'buttons':
+                        return this.createButtonDemo({ name: 'Glass Button', description: 'Frosted glass effect with blur' });
+                    case 'hover':
+                        return this.createCardDemo({ name: 'Card Hover', description: 'Interactive card with hover effects' });
+                    case 'cards':
+                        return this.createCardDemo({ name: 'Profile Card', description: 'User profile card with details' });
+                    default:
+                        return this.createGenericDemo({ name: 'Component', description: 'Interactive component' });
+                }
+            }
+
+            createButtonDemo(pattern) {
+                return `
+                    <button class="demo-button relative overflow-hidden px-9 py-[18px] bg-gradient-to-r from-[#FF375F] to-[#FF6B9D] border-none rounded-xl text-white font-semibold text-base cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_30px_rgba(255,55,95,0.4)]">
+                        ${pattern.name.substring(0, 20)}
+                    </button>
+                `;
+            }
+
+            createCardDemo(pattern) {
+                return `
+                    <div class="demo-card w-[250px] h-[200px] bg-white/3 border border-white/8 rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/15">
+                        <div class="demo-card-line h-3 bg-white/10 rounded animate-pulse-custom"></div>
+                        <div class="demo-card-line h-3 bg-white/10 rounded w-4/5 animate-pulse-custom"></div>
+                        <div class="demo-card-line h-3 bg-white/10 rounded w-3/5 animate-pulse-custom"></div>
+                    </div>
+                `;
+            }
+
+            createGenericDemo(pattern) {
+                return `
+                    <div class="demo-card w-[250px] h-[200px] bg-white/3 border border-white/8 rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/15">
+                        <div class="demo-card-line h-3 bg-white/10 rounded animate-pulse-custom"></div>
+                        <div class="demo-card-line h-3 bg-white/10 rounded w-4/5 animate-pulse-custom"></div>
+                        <div class="demo-card-line h-3 bg-white/10 rounded w-3/5 animate-pulse-custom"></div>
+                    </div>
+                `;
+            }
+
+            setupDemoInteraction(previewItem, pattern) {
+                const demoButton = previewItem.querySelector('.demo-button');
+                const demoCard = previewItem.querySelector('.demo-card');
+
+                if (demoButton) {
+                    this.setupGenericButton(demoButton);
+                }
+
+                if (demoCard) {
+                    demoCard.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+                    });
+
+                    demoCard.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateY(0)';
+                        this.style.borderColor = '';
+                    });
+                }
+            }
+
+            setupGenericButton(button) {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.05)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent navigation when clicking the button
+
+                    const originalText = e.target.textContent;
+                    e.target.textContent = 'Clicked!';
+                    e.target.style.opacity = '0.8';
+
+                    setTimeout(() => {
+                        e.target.textContent = originalText;
+                        e.target.style.opacity = '1';
+                    }, 500);
+                });
+            }
+
+            setupSearch() {
+                if (!this.searchInput || !this.searchResults) return;
+                
+                // Search input event listeners
+                this.searchInput.addEventListener('input', (e) => {
+                    this.handleSearch(e.target.value);
+                });
+
+                this.searchInput.addEventListener('focus', () => {
+                    if (this.searchInput.value.trim() && this.allPatterns.length > 0) {
+                        this.handleSearch(this.searchInput.value);
+                    }
+                });
+
+                // Close search results when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!this.searchInput.contains(e.target) && !this.searchResults.contains(e.target)) {
+                        this.searchResults.classList.remove('active');
+                    }
+                });
+
+                // Keyboard navigation in search results
+                this.searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        this.focusFirstResult();
+                    } else if (e.key === 'Escape') {
+                        this.searchResults.classList.remove('active');
+                        this.searchInput.blur();
+                    } else if (e.key === 'Enter') {
+                        const firstResult = this.searchResults.querySelector('.search-result-item');
+                        if (firstResult) {
+                            firstResult.click();
+                        }
+                    }
+                });
+            }
+
+            async handleSearch(query) {
+                query = query.trim().toLowerCase();
+
+                if (query === this.lastSearchQuery) return;
+                this.lastSearchQuery = query;
+
+                // Clear previous timeout
+                if (this.searchTimeout) {
+                    clearTimeout(this.searchTimeout);
+                }
+
+                // Debounce search
+                this.searchTimeout = setTimeout(() => {
+                    this.performSearch(query);
+                }, 300);
+            }
+
+            performSearch(query) {
+                if (!query) {
+                    if (this.searchResults) {
+                        this.searchResults.classList.remove('active');
+                    }
+                    return;
+                }
+
+                // For demo purposes, show mock results
+                this.displayMockSearchResults(query);
+            }
+
+            displayMockSearchResults(query) {
+                if (!this.searchResults || !this.noResults) return;
+                
+                this.searchResults.innerHTML = '';
+
+                const mockResults = [
+                    { categoryName: 'Buttons', name: 'Glassmorphism Button', description: 'Frosted glass effect with blur background', tags: ['glass', 'blur', 'modern'] },
+                    { categoryName: 'Hover Effects', name: 'Card Hover Animation', description: '3D tilt effect on card hover', tags: ['card', '3d', 'animation'] },
+                    { categoryName: 'Forms', name: 'Animated Form Validation', description: 'Real-time validation with smooth animations', tags: ['form', 'validation', 'animation'] }
+                ];
+
+                const filteredResults = mockResults.filter(result =>
+                    result.name.toLowerCase().includes(query) ||
+                    result.description.toLowerCase().includes(query) ||
+                    result.categoryName.toLowerCase().includes(query) ||
+                    result.tags.some(tag => tag.includes(query))
+                );
+
+                if (filteredResults.length === 0) {
+                    this.noResults.style.display = 'block';
+                    this.searchResults.appendChild(this.noResults);
+                    this.searchResults.classList.add('active');
+                    return;
+                }
+
+                this.noResults.style.display = 'none';
+
+                filteredResults.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'search-result-item p-4 border-b border-white/8 cursor-pointer transition-all duration-200 hover:bg-white/5 hover:translate-x-1 flex items-start gap-4 max-sm:flex-col max-sm:items-start max-sm:gap-2';
+
+                    resultItem.innerHTML = `
+                        <div class="result-category text-xs font-semibold text-[#FF375F] uppercase tracking-[1px] bg-[#FF375F]/10 py-1 px-2 rounded min-w-[80px] text-center">${result.categoryName}</div>
+                        <div style="flex: 1;">
+                            <div class="result-name font-semibold text-white">${result.name}</div>
+                            <div class="result-description text-sm text-white/60 mt-1">${result.description}</div>
+                            <div class="result-tags flex gap-1.5 flex-wrap mt-2">
+                                ${result.tags.map(tag => `<span class="result-tag text-[11px] py-0.5 px-1.5 bg-white/5 rounded text-white/50">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right text-white/30"></i>
+                    `;
+
+                    resultItem.addEventListener('click', () => {
+                        // Navigate to component page
+                        window.location.href = `component.html?category=${result.categoryName.toLowerCase().replace(' ', '-')}&search=${query}`;
+                    });
+
+                    this.searchResults.appendChild(resultItem);
+                });
+
+                this.searchResults.classList.add('active');
+            }
+
+            showSearchLoading() {
+                if (!this.searchResults) return;
+                
+                this.searchResults.innerHTML = `
+                    <div class="search-result-item p-4">
+                        <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
+                            <span class="inline-block w-5 h-5 border-2 border-white/8 border-t-[#FF375F] rounded-full animate-spin-custom"></span>
+                            <span style="color: rgba(255,255,255,0.6);">Loading patterns for search...</span>
+                        </div>
+                    </div>
+                `;
+                this.searchResults.classList.add('active');
+            }
+
+            focusFirstResult() {
+                if (!this.searchResults) return;
+                const firstResult = this.searchResults.querySelector('.search-result-item');
+                if (firstResult) {
+                    firstResult.focus();
+                }
+            }
+
+            setupInteractions() {
+                // Keyboard shortcut for search
+                document.addEventListener('keydown', (e) => {
+                    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                        e.preventDefault();
+                        if (this.searchInput) {
+                            this.searchInput.focus();
+                            this.searchInput.select();
+                        }
+                    }
+                });
+
+                // Parallax effect on scroll
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const grid = document.querySelector('.bg-grid-pattern');
+                    if (grid) {
+                        grid.style.transform = `translate(${-scrolled * 0.02}px, ${-scrolled * 0.02}px) rotate(0.1deg)`;
+                    }
+                });
+            }
+
+            showToast(message) {
+                if (!this.toast || !this.toastMessage) return;
+                
+                this.toastMessage.textContent = message;
+                this.toast.classList.add('show');
+
+                setTimeout(() => {
+                    this.toast.classList.remove('show');
+                }, 3000);
+            }
+
+            startTypewriterEffect() {
+                if (!this.searchInput) return;
+                
+                const searchPlaceholders = [
+                    'Search glass buttons, hover effects, form validation...',
+                    'Search loading spinners, success animations, error states...',
+                    'Search navigation patterns, modal animations, card designs...',
+                    'Search neon effects, soft UI, dark mode components...'
+                ];
+
+                let currentPlaceholder = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                const typeWriter = () => {
+                    const placeholder = searchPlaceholders[currentPlaceholder];
+
+                    if (isDeleting) {
+                        this.searchInput.placeholder = placeholder.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        this.searchInput.placeholder = placeholder.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    if (!isDeleting && charIndex === placeholder.length) {
+                        isDeleting = true;
+                        setTimeout(typeWriter, 2000);
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        currentPlaceholder = (currentPlaceholder + 1) % searchPlaceholders.length;
+                        setTimeout(typeWriter, 500);
+                    } else {
+                        setTimeout(typeWriter, isDeleting ? 50 : 100);
+                    }
+                };
+
+                setTimeout(typeWriter, 1000);
+            }
+
+            removeLoadingStates() {
+                document.querySelectorAll('.loading').forEach(el => {
+                    el.classList.remove('loading');
+                });
+            }
+
+            showErrorState() {
+                if (this.heroStat) {
+                    this.heroStat.innerHTML = `<strong>Error</strong> loading component data`;
+                }
+                if (this.patternCountElement) {
+                    this.patternCountElement.textContent = `Data unavailable`;
+                }
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new InterfaceIndex();
+        });
+    </script>
+</body>
+
+</html>
